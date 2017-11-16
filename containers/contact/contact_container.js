@@ -55,8 +55,9 @@ class ContactContainer extends React.Component{
         )
     }
     getView(navParams){
-        //const {mode} = navParams;
+        //const {mode,id} = navParams;
         let mode = 'view';
+        let id = 1510698031940;
         if(mode === 'create'){
             return (
                 <UpsertContact 
@@ -67,7 +68,7 @@ class ContactContainer extends React.Component{
             )
         }else if(mode === 'view'){
             return(
-                <ViewContact/>
+                <ViewContact id={id}/>
             )
         }
     }
