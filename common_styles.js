@@ -1,0 +1,29 @@
+export const colors = {
+    background:"#fff",
+    textColor:"rgba(73, 88, 103, 1)",
+    fieldColor:"rgba(73, 88, 103, .5)",
+    textColorAlt:"rgba(1, 1, 1, 1)",
+    textColorLight:"rgba(121, 122, 125, 1)",
+    textColorDarkBkg:"#fff",
+    primaryDark:"rgba(87, 115, 153, 1)",
+    primaryLight:"rbga(189, 213, 234, 1)",
+    accent2:"rgba(19, 132, 136, 1)",
+    accent:"#B8336A",
+    red:"rgba(253, 92, 99, 1)",
+    divider:"#E5E5E5",
+
+}
+
+export const fonts = {
+    sizes:{
+        h1:40,
+        h2:32,
+        h3:28,
+        h4:24,
+        h5:20,
+        h6:16,
+        p:14,
+        lil:12
+
+    }
+}

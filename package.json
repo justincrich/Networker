@@ -1,0 +1,61 @@
+{
+  "name": "networker",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start":"node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "android": "react-native run-android",
+    "log-android": "react-native log-android",
+    "ios": "react-native run-ios && log-ios",
+    "log-ios": "react-native log-ios",
+    "clean": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache clean && npm install && npm clear",
+    "clear": "npm start -- --reset-cache",
+    "postinstall": "rndebugger-open",
+    "react-devtool": "react-devtools",
+    "redux-devtool": "remotedev"
+  },
+  "dependencies": {
+    "awesome-phonenumber": "^2.2.0",
+    "google-libphonenumber": "^3.0.8",
+    "libphonenumber-js": "^0.4.39",
+    "lodash": "^4.17.4",
+    "react": "16.0.0-beta.5",
+    "react-native": "0.49.5",
+    "react-native-cli": "^2.0.1",
+    "react-native-elements": "^0.18.0",
+    "react-native-image-picker": "^0.26.7",
+    "react-native-linear-gradient": "^2.3.0",
+    "react-native-photo-upload": "^1.1.1",
+    "react-native-vector-icons": "^4.4.2",
+    "react-navigation": "^1.0.0-beta.15",
+    "react-redux": "^5.0.6",
+    "realm": "^2.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.2.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "jest": "21.2.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-devtools": "^3.0.0",
+    "react-dom": "^16.1.1",
+    "react-native-debugger-open": "^0.3.15",
+    "react-test-renderer": "16.0.0-beta.5",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-mock-store": "^1.3.0",
+    "remote-redux-devtools": "^0.5.12",
+    "remotedev-server": "^0.2.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "globals": {
+    "window": true
+  }
+}
