@@ -29,7 +29,13 @@ export default class ContactListRow extends React.Component{
             },
             name_company_text:{
                 display:'flex',
-                flexDirection:'row'
+                flexDirection:'row',
+            },
+            view_text:{
+                color:colors.textColor,
+            },
+            name_text:{
+                fontWeight:'bold'
             },
             sectionStyle:{
                 backgroundColor:'transparent',
@@ -69,7 +75,7 @@ export default class ContactListRow extends React.Component{
         return(
             <View style={this.styles.row_content}>
                 <View style={this.styles.name_company_text}>
-                    <Text style={this.styles.view_text}>
+                    <Text style={[this.styles.view_text,this.styles.name_text]}>
                         {`${item.firstName} ${item.lastName}`}
                     </Text>
                     {

@@ -5,14 +5,12 @@ import {createLogger} from 'redux-logger'; //logs out state in console
 
 
 
-let debuggWrapper = (data) => data;
+
 const logger = createLogger();
 export const store = createStore(
     ContactsReducer,
-    compose(
-        applyMiddleware(thunk,logger),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(thunk,logger)
 );
 
 // export const store = createStore(

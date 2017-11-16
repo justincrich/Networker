@@ -55,8 +55,8 @@ class ContactContainer extends React.Component{
         )
     }
     getView(navParams){
-        const {mode} = navParams;
-        //let mode = 'view';
+        //const {mode} = navParams;
+        let mode = 'view';
         if(mode === 'create'){
             return (
                 <UpsertContact 

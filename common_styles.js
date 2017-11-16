@@ -1,9 +1,8 @@
 export const colors = {
     background:"#fff",
-    textColor:"rgba(73, 88, 103, 1)",
+    textColor:"#212121",
     fieldColor:"rgba(73, 88, 103, .5)",
-    textColorAlt:"rgba(1, 1, 1, 1)",
-    textColorLight:"rgba(121, 122, 125, 1)",
+    textColorLight:"#757575",
     textColorDarkBkg:"#fff",
     primaryDark:"rgba(87, 115, 153, 1)",
     primaryLight:"rbga(189, 213, 234, 1)",
@@ -24,6 +23,5 @@ export const fonts = {
         h6:16,
         p:14,
         lil:12
-
-    }
+    },
 }
