@@ -2,7 +2,7 @@ import React from 'react';
 import {View,Image,Text,NativeModules} from 'react-native';
 import {Provider} from 'react-redux';
 import {DrawerNavigator} from 'react-navigation'
-import {Root} from './Router';
+import {ContactsStack} from './Router';
 import {store} from './redux/store/store';
 import {colors} from './common_styles';
 //Additional settings for testing
@@ -29,7 +29,7 @@ export default class App extends React.Component {
     // const Route = Router(this.state.coreState);
     return (
     <Provider store={store} >
-      <Root/>
+      <ContactsStack/>
     </Provider>
     );
   }

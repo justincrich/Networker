@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,StyleSheet,Text, Animated, TouchableOpacity} from 'react-native';
+import {View,StyleSheet,Text, Animated, TouchableOpacity,Linking} from 'react-native';
 import { Icon } from 'react-native-elements';
 import {colors,fonts} from '../../../common_styles';
 import JText from '../../base_components/jtext_component';
@@ -69,14 +69,18 @@ export default class ContactBar extends React.Component{
                             color={colors.accent}
                             size={30}
                             iconStyle={this.styles.icon}
-                            onLongPress={()=>console.log('hiii')}
+                            onLongPress={()=>this.props.showValue(`Phone Number: ${this.props.contact.phoneNumber}`)}
                         />
                     </TouchableOpacity>
                 }
                 {
                     this.props.contact.email &&
                     <TouchableOpacity
-                        onPress={()=>communications.email([`${this.props.contact.email}`],[''],[''],'','')}
+                        onPress={()=>{
+                            let emailUrl = `mailto:${this.props.contact.email}`;
+                            Linking.openURL(emailUrl);
+                        }}
+                        onLongPress={()=>this.props.showValue(`Email: ${this.props.contact.email}`)}
                         
                     >
                         <Icon
@@ -113,7 +117,7 @@ export default class ContactBar extends React.Component{
     getMoreOptions(){
         
         return(
-            <ContactInfoMoreOptions contact={this.props.contact} closeView={this.toggleMoreVisibility}/>
+            <ContactInfoMoreOptions social={this.props.contact.social} closeView={this.toggleMoreVisibility}/>
         )
 
     }

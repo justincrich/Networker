@@ -52,6 +52,7 @@ export default class ContactInfoMoreOptions extends React.Component{
             }
         });
         this.state = {};
+        this.openLink = this.openLink.bind(this);
     }
 
     componentDidMount(){
@@ -86,20 +87,12 @@ export default class ContactInfoMoreOptions extends React.Component{
                         horizontal={true}
                     >
                         {
-                            this.props.contact.social.facebook &&
+                            this.props.social.facebook &&
                             <TouchableOpacity
                                 onPress={()=>{
-                                    let appUrl = `fb://profile/${this.props.contact.social.facebook.id}`;
-                                    let webUrl = `https://fb.com/${this.props.contact.social.facebook.id}`;
-                                    Linking.canOpenURL(appUrl)
-                                    .then((supported)=>{
-                                        
-                                        if(!supported){
-                                            Linking.openURL(webUrl);
-                                        }else{
-                                            Linking.openURL(appUrl);
-                                        }
-                                    }).catch(err=>console.error('An error occurred',err.message))
+                                    let appUrl = `fb://profile/${this.props.social.facebook.id}`;
+                                    let webUrl = this.props.social.facebook.id;
+                                    this.openLink(appUrl,webUrl);
                                 }}
                             >
                                 <Icon
@@ -111,30 +104,94 @@ export default class ContactInfoMoreOptions extends React.Component{
                                 />
                             </TouchableOpacity>
                         }
-                        <Icon
-                            type='material-community'
-                            name='linkedin'
-                            color={colors.background}
-                            iconStyle={this.styles.iconStyle}
-                            size={30}
-                            onPress={()=>this.setState({moreOpen:!this.state.moreOpen})}
-                        />
-                        <Icon
-                            type='material-community'
-                            name='pinterest'
-                            color={colors.background}
-                            iconStyle={this.styles.iconStyle}
-                            size={30}
-                            onPress={()=>this.setState({moreOpen:!this.state.moreOpen})}
-                        />
-                        <Icon
-                            type='material-community'
-                            name='snapchat'
-                            color={colors.background}
-                            iconStyle={this.styles.iconStyle}
-                            size={30}
-                            onPress={()=>this.setState({moreOpen:!this.state.moreOpen})}
-                        />
+                        {
+                            this.props.social.linkedin &&
+                            <TouchableOpacity
+                                onPress={()=>{
+                                    let appUrl = `linkedin://${this.props.social.linkedin.id}`;
+                                    let webUrl = this.props.social.linkedin.url;
+                                    this.openLink(appUrl,webUrl)
+                                }}
+                            >
+                                <Icon
+                                    type='material-community'
+                                    name='linkedin'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                />
+                            </TouchableOpacity>
+                        }
+                        {
+                            this.props.social.twitter &&
+                            <TouchableOpacity
+                                onPress={()=>{
+                                    let appUrl = `twitter://user?screen_name=${this.props.social.twitter.username}`;
+                                    let webUrl = `https://twitter.com/${this.props.social.twitter.username}`;
+                                    this.openLink(appUrl,webUrl)
+                                }}
+                            >
+                                <Icon
+                                    type='material-community'
+                                    name='twitter'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                />
+                            </TouchableOpacity>
+                        }
+                        {
+                            this.props.social.pinterest&&
+                            <TouchableOpacity
+                                onPress={()=>{
+                                    let appUrl = `pinterest://www.pinterest.com/${this.props.social.pinterest.username}`;
+                                    let webUrl = `https://pinterest.com/${this.props.social.pinterest.username}`;
+                                    this.openLink(appUrl,webUrl)
+                                }}
+                            >
+                                <Icon
+                                    type='material-community'
+                                    name='pinterest'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                />
+                            </TouchableOpacity>
+                        }
+                        {
+                            this.props.social.snapchat&&
+                            <TouchableOpacity
+                            onPress={()=>{
+                                let appUrl = `snapchat://add/${this.props.social.snapchat.username}`;
+                                this.openLink(appUrl)
+                            }}
+                            >
+                                <Icon
+                                    type='material-community'
+                                    name='snapchat'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                />
+                            </TouchableOpacity>
+                        }
+                        {
+                            this.props.social.instagram &&
+                            <TouchableOpacity
+                            onPress={()=>{
+                                let appUrl = `instagram://user?username=${this.props.social.instagram.username}`;
+                                this.openLink(appUrl)
+                            }}
+                            >
+                                <Icon
+                                    type='material-community'
+                                    name='instagram'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                />
+                            </TouchableOpacity>
+                        }
 
                     </ScrollView>
                 <TouchableOpacity
@@ -173,6 +230,17 @@ export default class ContactInfoMoreOptions extends React.Component{
                 </Animated.View>
             </Animated.View>
         )
+    }
+
+    openLink(appUrl,webUrl){
+        Linking.canOpenURL(appUrl)
+        .then((supported)=>{
+            if(!supported && webUrl){
+                Linking.openURL(webUrl);
+            }else{
+                Linking.openURL(appUrl);
+            }
+        }).catch(err=>console.error('An error occurred',err.message))
     }
 }
 

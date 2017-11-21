@@ -3,9 +3,10 @@ import {
     View,
     Text, 
     StyleSheet, 
-    TouchableWithoutFeedback,
+    TouchableOpacity,
     Animated
     } from 'react-native';
+import JText from '../../base_components/jtext_component';
 import {colors,fonts} from '../../../common_styles';
 import { Icon } from 'react-native-elements';
 
@@ -70,18 +71,18 @@ export default class UpsertHeader extends React.Component{
                     onPress={()=>this.props.goBack()}
                 />
                 <View style={this.styles.titleTextContainer}>
-                    <Text style={this.styles.titleText}>
+                    <JText style={this.styles.titleText}>
                         {this.props.title}
-                    </Text>
+                    </JText>
                 </View>
-                <TouchableWithoutFeedback
+                <TouchableOpacity
                     style={this.styles.saveButtonContainer}
                     onPress={this.props.saveContact}
                 >
-                    <Text style={this.styles.saveButtonText}>
+                    <JText style={this.styles.saveButtonText}>
                         Save
-                    </Text>
-                </TouchableWithoutFeedback>
+                    </JText>
+                </TouchableOpacity>
             </View>
             
         )
