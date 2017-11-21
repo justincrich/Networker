@@ -22,6 +22,13 @@ export const fonts = {
         h5:20,
         h6:16,
         p:14,
-        lil:12
+        lil:12,
+        lil_lil:8
     },
+    types:{
+        primary:'Montserrat-Regular',
+        light:'Montserrat-Light',
+        heavy:'Montserrat-Black'
+
+    }
 }

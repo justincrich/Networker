@@ -17,11 +17,11 @@ export const ContactsStack = StackNavigator({
     },
     Contact:{
         screen:ContactContainer,
-        path:'contact/:mode',
+        
     }
 },
 {
-    initialRouteName:('ListContacts'),
+    initialRouteName:('Contact'),
     headerMode:'none'
 }
 )

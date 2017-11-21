@@ -6,6 +6,7 @@ import * as ContactsActions from '../../redux/actions/contacts_actions';
 import UpsertContact from '../../components/contact/upsert_contact_component';
 import ViewContact from '../../components/contact/view_contact_component';
 import {colors} from '../../common_styles';
+import defaultImg from '../../media/profileimg.png'
 // import realm from '../../data/realm';
 // import {ContactSchema} from '../../data/schemas';
 class ContactContainer extends React.Component{
@@ -17,33 +18,44 @@ class ContactContainer extends React.Component{
         this.saveContact = this.saveContact.bind(this);
         this.getView = this.getView.bind(this);
         
+        
+    }
+
+    componentWillMount(){
+        // console.log('this.props',this.props)
+        // let {navigation:{state:{params:{mode:mode,id:id}}}} = this.props;
+        // mode = !mode? 'view':mode;
+        // id = !id? 1510816587249:id;
+        // console.log('id',id)
+        // this.props.Actions.getContact(id);
     }
 
     componentWillReceiveProps(nextProps) {
-        
-        switch(nextProps.data.status){
-            case 'complete':{
-                console.log('complete')
-                nextProps.Actions.resetContactStatus();
-                nextProps.navigation.goBack();
+        //this.props.navigation.state.params
+        //let {data:{selectedContact:contact}} = this.props;
+        // let {navigation:{state:{params:{mode:mode='view',id:id=1510816587249}}}} = nextProps;
+        // mode = !mode? 'view':mode;
+        // id = !id? 1510816587249:id;
+        // if(mode === 'create'){
+            switch(nextProps.data.status){
+                case 'complete':{
+                    console.log('complete')
+                    nextProps.Actions.resetContactStatus();
+                    nextProps.navigation.goBack();
+                }
+                break;
+                case 'error':{
+                    nextProps.Actions.resetContactStatus();
+                    //throw error
+                }
             }
-            break;
-            case 'error':{
-                nextProps.Actions.resetContactStatus();
-                //throw error
-            }
-        }
+        // }else if(mode === 'view'){
+
+        // }
     }
-    /* 
-        <UpsertContact 
-                    saveContact={this.saveContact}
-                    goBack={this.props.navigation.goBack}
-                    type='upsert'
-                />
-    */
 
     render(){
-        console.log(this.props)
+
         return(
             <View style={{
                 position:'relative',
@@ -57,7 +69,32 @@ class ContactContainer extends React.Component{
     getView(navParams){
         //const {mode,id} = navParams;
         let mode = 'view';
-        let id = 1510698031940;
+        let id =  1510816587249;
+        
+        //let {data:{selectedContact:contact}} = this.props;
+        let contact={
+            id:12345,
+            firstName:'Justin',
+            lastName:'Rich',
+            pictureUri:defaultImg,
+            email:'justinrich2008@gmail.com',
+            phoneNumber:'801-636-6098',
+            notes:'JUSTIN IS COOL',
+            jobTitle:'Engineer',
+            company:'Google',
+            social:{
+                facebook:{
+                    url:'https://www.facebook.com/justincrich',
+                    id:'17810103'
+                },
+                linkedin:'https://www.linkedin.com/in/jcrich/',
+                twitter:'justincrich',
+                pinterest:'https://www.pinterest.com/justinrich/',
+                snapchat:'nehowdy',
+                instagram:'justinrich'
+            }
+        }
+        
         if(mode === 'create'){
             return (
                 <UpsertContact 
@@ -67,17 +104,20 @@ class ContactContainer extends React.Component{
                 />
             )
         }else if(mode === 'view'){
+            
             return(
-                <ViewContact id={id}/>
+                <ViewContact contact={contact}/>
             )
         }
     }
     saveContact(contact){
+        
         this.props.Actions.requestContactCreate(contact);
         
         // this.props.navigation.goBack();
         
     }
+
 }
 
 const mapStateToProps = state => {

@@ -1,5 +1,6 @@
 import * as ActionTypes from '../actiontypes/actiontypes';
 import realm from '../../data/realm';
+import {ContactSchema} from '../../data/schemas';
 // import {ContactSchema} from '../../data/schemas';
 //const Realm = require('realm');
 // const schema = {
@@ -17,10 +18,31 @@ import realm from '../../data/realm';
 //     }
 // }
 //Get Contact
+
+
 export function getContact(id){
+    return function (dispatch){
+        dispatch(beginGetContact(id));
+        try{
+            const contact = realm.objectForPrimaryKey(ContactSchema,id);
+            console.log('IN ACTION',contact)
+            dispatch(resolveGetContact(contact));
+        }catch(e){
+            dispatch(throwContactError(e))
+        }
+    }
+}
+
+function beginGetContact(id){
     return{
-        type: ActionTypes.CONTACT_REQUEST_ONE,
+        type: ActionTypes.CONTACT_REQUEST_ONE_BEGIN,
         id:id
+    }
+}
+function resolveGetContact(contact){
+    return{
+        type: ActionTypes.CONTACT_REQUEST_ONE_RESOLVE,
+        contact:contact
     }
 }
 
