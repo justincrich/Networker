@@ -21,41 +21,9 @@ class ContactContainer extends React.Component{
         
     }
 
-    componentWillMount(){
-        // console.log('this.props',this.props)
-        // let {navigation:{state:{params:{mode:mode,id:id}}}} = this.props;
-        // mode = !mode? 'view':mode;
-        // id = !id? 1510816587249:id;
-        // console.log('id',id)
-        // this.props.Actions.getContact(id);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        //this.props.navigation.state.params
-        //let {data:{selectedContact:contact}} = this.props;
-        // let {navigation:{state:{params:{mode:mode='view',id:id=1510816587249}}}} = nextProps;
-        // mode = !mode? 'view':mode;
-        // id = !id? 1510816587249:id;
-        // if(mode === 'create'){
-            switch(nextProps.data.status){
-                case 'complete':{
-                    console.log('complete')
-                    nextProps.Actions.resetContactStatus();
-                    nextProps.navigation.goBack();
-                }
-                break;
-                case 'error':{
-                    nextProps.Actions.resetContactStatus();
-                    //throw error
-                }
-            }
-        // }else if(mode === 'view'){
-
-        // }
-    }
+ 
 
     render(){
-
         return(
             <View style={{
                 position:'relative',
@@ -67,6 +35,7 @@ class ContactContainer extends React.Component{
         )
     }
     getView(navParams){
+        console.log(this.props)
         const {mode,id} = navParams;
         // let mode = 'view';
         // let id =  1510816587249;
@@ -127,7 +96,8 @@ class ContactContainer extends React.Component{
     saveContact(contact){
         
         this.props.Actions.requestContactCreate(contact);
-        
+        this.props.Actions.resetContactStatus();
+        this.props.navigation.goBack();
         // this.props.navigation.goBack();
         
     }

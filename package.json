@@ -13,7 +13,9 @@
     "clear": "npm start -- --reset-cache",
     "postinstall": "rndebugger-open",
     "react-devtool": "react-devtools",
-    "redux-devtool": "remotedev"
+    "redux-devtool": "remotedev",
+    "build":"cd android && ./gradlew assembleRelease",
+    "startrelease":"react-native run-android --variant=release"
   },
   "dependencies": {
     "awesome-phonenumber": "^2.2.0",

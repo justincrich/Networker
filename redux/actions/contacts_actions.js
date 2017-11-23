@@ -25,7 +25,7 @@ export function getContact(id){
         dispatch(beginGetContact(id));
         try{
             const contact = realm.objectForPrimaryKey(ContactSchema,id);
-            console.log('IN ACTION',contact)
+            //console.log('IN ACTION',contact.value())
             dispatch(resolveGetContact(contact));
         }catch(e){
             dispatch(throwContactError(e))
@@ -49,7 +49,6 @@ function resolveGetContact(contact){
 //Contact Create
 export function requestContactCreate(contact){
     return function (dispatch){
-
         dispatch(beginContactCreate());
         try{
             

@@ -38,15 +38,18 @@ export default class ContactBar extends React.Component{
     }
 
     render(){
+        const {phoneNumber,email,social} = this.props.contact
         return(
             <View
                 style={this.styles.body}
             >
                 {
-                    this.props.contact.phoneNumber &&
+                    !phoneNumber?
+                    <View/>
+                    :
                     <TouchableOpacity
-                        onPress={()=>communications.phonecall(this.props.contact.phoneNumber,false)}
-                        onLongPress={()=>this.props.showValue(`Phone Number: ${this.props.contact.phoneNumber}`)}
+                        onPress={()=>communications.phonecall(phoneNumber,false)}
+                        onLongPress={()=>this.props.showValue(`Phone Number: ${phoneNumber}`)}
                     >
                         <Icon
                             name='phone'
@@ -59,28 +62,32 @@ export default class ContactBar extends React.Component{
                     
                 }
                 {
-                    this.props.contact.phoneNumber &&
+                    !phoneNumber?
+                    <View/>
+                    :
                     <TouchableOpacity
-                    onPress={()=>communications.text(this.props.contact.phoneNumber,'')}
-                        onLongPress={()=>this.props.showValue(`Phone Number: ${this.props.contact.phoneNumber}`)}
+                    onPress={()=>communications.text(phoneNumber,'')}
+                        onLongPress={()=>this.props.showValue(`Phone Number: ${phoneNumber}`)}
                     >
                         <Icon
                             name='textsms'
                             color={colors.accent}
                             size={30}
                             iconStyle={this.styles.icon}
-                            onLongPress={()=>this.props.showValue(`Phone Number: ${this.props.contact.phoneNumber}`)}
+                            onLongPress={()=>this.props.showValue(`Phone Number: ${phoneNumber}`)}
                         />
                     </TouchableOpacity>
                 }
                 {
-                    this.props.contact.email &&
+                    !email?
+                    <View/>
+                    :
                     <TouchableOpacity
                         onPress={()=>{
-                            let emailUrl = `mailto:${this.props.contact.email}`;
+                            let emailUrl = `mailto:${email}`;
                             Linking.openURL(emailUrl);
                         }}
-                        onLongPress={()=>this.props.showValue(`Email: ${this.props.contact.email}`)}
+                        onLongPress={()=>this.props.showValue(`Email: ${email}`)}
                         
                     >
                         <Icon
@@ -92,18 +99,20 @@ export default class ContactBar extends React.Component{
                     </TouchableOpacity>
                 }
                 {
-                    (Object.keys(this.props.contact.social).length>0) &&
-                    <TouchableOpacity
-                        onPress={this.toggleMoreVisibility}
-                    >
-                        <Icon
-                            type='material-community'
-                            name='dots-horizontal'
-                            color={colors.accent}
-                            iconStyle={this.styles.icon}
-                            size={30}
-                        />
-                    </TouchableOpacity>
+                    !social?
+                        <View/>
+                    :
+                        <TouchableOpacity
+                            onPress={this.toggleMoreVisibility}
+                        >
+                            <Icon
+                                type='material-community'
+                                name='dots-horizontal'
+                                color={colors.accent}
+                                iconStyle={this.styles.icon}
+                                size={30}
+                            />
+                        </TouchableOpacity>
                 }
                 {
                     this.state.moreOpen&&
@@ -117,7 +126,7 @@ export default class ContactBar extends React.Component{
     getMoreOptions(){
         
         return(
-            <ContactInfoMoreOptions social={this.props.contact.social} closeView={this.toggleMoreVisibility}/>
+            <ContactInfoMoreOptions social={social} closeView={this.toggleMoreVisibility}/>
         )
 
     }

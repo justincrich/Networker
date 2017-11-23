@@ -90,6 +90,7 @@ export default class ImageUpload extends React.Component {
     selectImage(){
         let options = {
             title:null,
+            quality:.5,
             storageOptions: {
                 skipBackup: true,
                 path: 'images'

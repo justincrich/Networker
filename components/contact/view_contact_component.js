@@ -85,7 +85,7 @@ export default class ViewContact extends React.Component{
                     <View style={this.styles.header}>
                         <View style={this.styles.imgContainer}>
                             <Image
-                                source={defaultImg}
+                                source={{uri:this.props.contact.pictureUri}}
                                 style={this.styles.image}
                             />
                         </View>
@@ -103,10 +103,12 @@ export default class ViewContact extends React.Component{
                     <View 
                         style={this.styles.contactInfo}
                     >
-                        <ContactBar
-                            contact={this.props.contact}
-                            showValue={this.showContactToast}
-                        />
+                        
+                            <ContactBar
+                                contact={this.props.contact}
+                                showValue={this.showContactToast}
+                            />
+                        
                     </View>
                     
                 </JBody>
@@ -135,6 +137,7 @@ export default class ViewContact extends React.Component{
         }
     }
     showContactToast(message){
+        console.log('hiii')
         if(this.state.message === ''){
             this.setState({message:message});
         }

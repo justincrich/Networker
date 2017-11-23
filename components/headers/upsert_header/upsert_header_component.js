@@ -18,7 +18,7 @@ export default class UpsertHeader extends React.Component{
                 display:'flex',
                 flexDirection:'row',
                 zIndex:1000,
-                
+                flex:1,
                 alignItems:'center',
                 justifyContent:'space-between',
                 flexBasis:'auto',
@@ -26,14 +26,15 @@ export default class UpsertHeader extends React.Component{
             },
             
             saveButtonContainer:{
-                flex:1,
+                
                 display:'flex',
                 alignContent:'center',
+                justifyContent:'center',
                 height:'100%'
             },
             saveButtonText:{
                 fontWeight:'500',
-                fontSize:15,
+                fontSize:fonts.sizes.p,
                 color:colors.textColor,
             },
             titleText:{
