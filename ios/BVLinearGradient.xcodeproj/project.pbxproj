@@ -5,17 +5,56 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
-		64AA15111EF7F31200718508 /* BVLinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */; };
-		64AA15121EF7F31200718508 /* BVLinearGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */; };
-		EF6045F01C4E5D290001F552 /* BVLinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */; };
-		EF6045F11C4E5D290001F552 /* BVLinearGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */; };
-		77F1D83561F04FD185228883 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE739CC0A3F483FAB7E5B0D /* libRNImagePicker.a */; };
 		24A73E8BA2564292A7A85C84 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854C616CBDEE4FC18988EB0A /* libRNVectorIcons.a */; };
-		9BD7E561DA5A493F8F7AC116 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 986C6C680E9C42C5BDBFD8DC /* libRealmReact.a */; };
 		3564C3A974EB4A99BD668BE5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1548E39FDA1417F87EBF665 /* libc++.tbd */; };
 		3C958E76792847889C06E39E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4F8E28D35847EDA0FB5730 /* libz.tbd */; };
+		64AA15111EF7F31200718508 /* BVLinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */; };
+		64AA15121EF7F31200718508 /* BVLinearGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */; };
+		77F1D83561F04FD185228883 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE739CC0A3F483FAB7E5B0D /* libRNImagePicker.a */; };
+		9BD7E561DA5A493F8F7AC116 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 986C6C680E9C42C5BDBFD8DC /* libRealmReact.a */; };
+		EF6045F01C4E5D290001F552 /* BVLinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */; };
+		EF6045F11C4E5D290001F552 /* BVLinearGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D062AF581FC6926F004F0491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DFE239AFAC146A898DF6C0D /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BVLinearGradient;
+		};
+		D062AF5A1FC6926F004F0491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DFE239AFAC146A898DF6C0D /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64AA15081EF7F30100718508;
+			remoteInfo = "BVLinearGradient-tvOS";
+		};
+		D062AF5D1FC6926F004F0491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE50C8E7F43244539FF9EB36 /* RealmReact.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F60690131CA2766F0003FB26;
+			remoteInfo = RealmReact;
+		};
+		D062AF601FC6926F004F0491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EC536A97BD74F61B38EB86B /* RNImagePicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
+			remoteInfo = RNImagePicker;
+		};
+		D062AF631FC6926F004F0491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 620F40ED9885454EB80F1F2A /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
+			remoteInfo = RNVectorIcons;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
@@ -39,21 +78,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0EC536A97BD74F61B38EB86B /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBVLinearGradient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DFE239AFAC146A898DF6C0D /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		620F40ED9885454EB80F1F2A /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		64AA15081EF7F30100718508 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBVLinearGradient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		854C616CBDEE4FC18988EB0A /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
+		986C6C680E9C42C5BDBFD8DC /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
+		A1548E39FDA1417F87EBF665 /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		AC4F8E28D35847EDA0FB5730 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CE50C8E7F43244539FF9EB36 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
+		EDE739CC0A3F483FAB7E5B0D /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		EF6045EC1C4E5D290001F552 /* BVLinearGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVLinearGradient.h; sourceTree = "<group>"; };
 		EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradient.m; sourceTree = "<group>"; };
 		EF6045EE1C4E5D290001F552 /* BVLinearGradientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVLinearGradientManager.h; sourceTree = "<group>"; };
 		EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradientManager.m; sourceTree = "<group>"; };
-		0EC536A97BD74F61B38EB86B /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		EDE739CC0A3F483FAB7E5B0D /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		1DFE239AFAC146A898DF6C0D /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		620F40ED9885454EB80F1F2A /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; name = "RNVectorIcons.xcodeproj"; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		854C616CBDEE4FC18988EB0A /* libRNVectorIcons.a */ = {isa = PBXFileReference; name = "libRNVectorIcons.a"; path = "libRNVectorIcons.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		CE50C8E7F43244539FF9EB36 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; name = "RealmReact.xcodeproj"; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		986C6C680E9C42C5BDBFD8DC /* libRealmReact.a */ = {isa = PBXFileReference; name = "libRealmReact.a"; path = "libRealmReact.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		A1548E39FDA1417F87EBF665 /* libc++.tbd */ = {isa = PBXFileReference; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
-		AC4F8E28D35847EDA0FB5730 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +126,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		25617875258745AEB2B89954 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				0EC536A97BD74F61B38EB86B /* RNImagePicker.xcodeproj */,
+				1DFE239AFAC146A898DF6C0D /* BVLinearGradient.xcodeproj */,
+				620F40ED9885454EB80F1F2A /* RNVectorIcons.xcodeproj */,
+				CE50C8E7F43244539FF9EB36 /* RealmReact.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +146,48 @@
 				25617875258745AEB2B89954 /* Libraries */,
 				9D2A7C9285534530873A510B /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		9D2A7C9285534530873A510B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1548E39FDA1417F87EBF665 /* libc++.tbd */,
+				AC4F8E28D35847EDA0FB5730 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D062AF4E1FC6926F004F0491 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D062AF611FC6926F004F0491 /* libRNImagePicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D062AF501FC6926F004F0491 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D062AF591FC6926F004F0491 /* libBVLinearGradient.a */,
+				D062AF5B1FC6926F004F0491 /* libBVLinearGradient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D062AF521FC6926F004F0491 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D062AF641FC6926F004F0491 /* libRNVectorIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D062AF541FC6926F004F0491 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D062AF5E1FC6926F004F0491 /* libRealmReact.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		EF6045EB1C4E5D290001F552 /* BVLinearGradient */ = {
@@ -108,28 +200,6 @@
 			);
 			path = BVLinearGradient;
 			sourceTree = "<group>";
-		};
-		25617875258745AEB2B89954 /* Libraries */ = {
-			isa = "PBXGroup";
-			children = (
-				0EC536A97BD74F61B38EB86B /* RNImagePicker.xcodeproj */,
-				1DFE239AFAC146A898DF6C0D /* BVLinearGradient.xcodeproj */,
-				620F40ED9885454EB80F1F2A /* RNVectorIcons.xcodeproj */,
-				CE50C8E7F43244539FF9EB36 /* RealmReact.xcodeproj */,
-			);
-			name = Libraries;
-			sourceTree = "<group>";
-			path = "";
-		};
-		9D2A7C9285534530873A510B /* Frameworks */ = {
-			isa = "PBXGroup";
-			children = (
-				A1548E39FDA1417F87EBF665 /* libc++.tbd */,
-				AC4F8E28D35847EDA0FB5730 /* libz.tbd */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -196,6 +266,24 @@
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D062AF501FC6926F004F0491 /* Products */;
+					ProjectRef = 1DFE239AFAC146A898DF6C0D /* BVLinearGradient.xcodeproj */;
+				},
+				{
+					ProductGroup = D062AF541FC6926F004F0491 /* Products */;
+					ProjectRef = CE50C8E7F43244539FF9EB36 /* RealmReact.xcodeproj */;
+				},
+				{
+					ProductGroup = D062AF4E1FC6926F004F0491 /* Products */;
+					ProjectRef = 0EC536A97BD74F61B38EB86B /* RNImagePicker.xcodeproj */;
+				},
+				{
+					ProductGroup = D062AF521FC6926F004F0491 /* Products */;
+					ProjectRef = 620F40ED9885454EB80F1F2A /* RNVectorIcons.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58B511DA1A9E6C8500147676 /* BVLinearGradient */,
@@ -203,6 +291,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D062AF591FC6926F004F0491 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = D062AF581FC6926F004F0491 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D062AF5B1FC6926F004F0491 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = D062AF5A1FC6926F004F0491 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D062AF5E1FC6926F004F0491 /* libRealmReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRealmReact.a;
+			remoteRef = D062AF5D1FC6926F004F0491 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D062AF611FC6926F004F0491 /* libRNImagePicker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNImagePicker.a;
+			remoteRef = D062AF601FC6926F004F0491 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D062AF641FC6926F004F0491 /* libRNVectorIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNVectorIcons.a;
+			remoteRef = D062AF631FC6926F004F0491 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -353,17 +479,17 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = BVLinearGradient;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 10.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/BVLinearGradient\"",
 					"\"$(SRCROOT)/BVLinearGradient\"",
 					"\"$(SRCROOT)/BVLinearGradient\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BVLinearGradient;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
@@ -378,17 +504,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = BVLinearGradient;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 10.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/BVLinearGradient\"",
 					"\"$(SRCROOT)/BVLinearGradient\"",
 					"\"$(SRCROOT)/BVLinearGradient\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BVLinearGradient;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};
