@@ -41,14 +41,14 @@ export default class ViewHeader extends React.Component{
                         name='edit'
                         size={30}
                         color={colors.titleText}
-                        onPress={()=>this.props.goBack()}
+                        onPress={()=>this.props.edit()}
                     />
                     <Icon
                         name='delete'
                         size={30}
                         iconStyle={{marginLeft:30}}
                         color={colors.titleText}
-                        onPress={()=>this.props.goBack()}
+                        onPress={()=>this.props.delete()}
                     />
                 </View>
             </View>

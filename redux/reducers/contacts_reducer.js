@@ -4,13 +4,29 @@ import * as ActionTypes from '../actiontypes/actiontypes';
 const initialState={
 
     contacts:[],
+    requestedId:null,
     selectedContact:{},
     status:'ready',
-    error:null
+    error:null,
 }
 
 export default function ContactsReducer(state=initialState,action){
     switch(action.type){
+        case ActionTypes.CONTACT_REQUEST_ONE_BEGIN:{
+            return{
+                ...state,
+                requestedId:action.id,
+                status:'loading'
+            }
+        }
+        case ActionTypes.CONTACT_REQUEST_ONE_RESOLVE:{
+            return{
+                ...state,
+                status:'ready',
+                requestedId:null,
+                selectedContact:action.contact
+            }
+        }
         case ActionTypes.CONTACTLIST_BEGIN_GET_ALL:{
             return{
                 ...state,

@@ -3,9 +3,10 @@ import {
     View,
     Text, 
     StyleSheet, 
-    TouchableWithoutFeedback,
+    TouchableOpacity,
     Animated
     } from 'react-native';
+import JText from '../../base_components/jtext_component';
 import {colors,fonts} from '../../../common_styles';
 import { Icon } from 'react-native-elements';
 
@@ -17,7 +18,7 @@ export default class UpsertHeader extends React.Component{
                 display:'flex',
                 flexDirection:'row',
                 zIndex:1000,
-                
+                flex:1,
                 alignItems:'center',
                 justifyContent:'space-between',
                 flexBasis:'auto',
@@ -25,14 +26,15 @@ export default class UpsertHeader extends React.Component{
             },
             
             saveButtonContainer:{
-                flex:1,
+                
                 display:'flex',
                 alignContent:'center',
+                justifyContent:'center',
                 height:'100%'
             },
             saveButtonText:{
                 fontWeight:'500',
-                fontSize:15,
+                fontSize:fonts.sizes.p,
                 color:colors.textColor,
             },
             titleText:{
@@ -70,18 +72,18 @@ export default class UpsertHeader extends React.Component{
                     onPress={()=>this.props.goBack()}
                 />
                 <View style={this.styles.titleTextContainer}>
-                    <Text style={this.styles.titleText}>
+                    <JText style={this.styles.titleText}>
                         {this.props.title}
-                    </Text>
+                    </JText>
                 </View>
-                <TouchableWithoutFeedback
+                <TouchableOpacity
                     style={this.styles.saveButtonContainer}
                     onPress={this.props.saveContact}
                 >
-                    <Text style={this.styles.saveButtonText}>
+                    <JText style={this.styles.saveButtonText}>
                         Save
-                    </Text>
-                </TouchableWithoutFeedback>
+                    </JText>
+                </TouchableOpacity>
             </View>
             
         )

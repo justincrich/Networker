@@ -17,7 +17,7 @@ export const ContactsStack = StackNavigator({
     },
     Contact:{
         screen:ContactContainer,
-        path:'contact/:mode',
+        
     }
 },
 {
@@ -26,42 +26,42 @@ export const ContactsStack = StackNavigator({
 }
 )
 
-export const Root = TabNavigator({
-    Contacts:{
-        screen:ContactsStack,
-        navigationOptions:{
-            tabBarLabel:'Contacts',
-            tabBarIcon:({tintColor,focused})=>(
-                <Icon name="person" size={40} color={tintColor} />
-            )
-        }
-    },
+// export const Root = TabNavigator({
+//     Contacts:{
+//         screen:ContactsStack,
+//         navigationOptions:{
+//             tabBarLabel:'Contacts',
+//             tabBarIcon:({tintColor,focused})=>(
+//                 <Icon name="person" size={40} color={tintColor} />
+//             )
+//         }
+//     },
 
-},
-{
-    initialRouteName:'Contacts',
-    tabBarPosition:'bottom',
-    headerMode:'none',
-    tabBarOptions:{
-        activeTintColor:colors.accent,
-        inactiveTintColor:colors.textColor,
-        activeBackgroundColor:colors.background,
-        inactiveBackgroundColor:colors.background,
-        style:{
-            backgroundColor:colors.background,
-            // position:'relative',
-            // left:0,
-            // bottom:0,
-            // zIndex:3000
-        },
-        indicatorStyle:{width:0},
-        showIcon:true,
-        iconStyle:{width:50,height:40},
-        upperCaseLabel:false
-    }
-}
+// },
+// {
+//     initialRouteName:'Contacts',
+//     tabBarPosition:'bottom',
+//     headerMode:'none',
+//     tabBarOptions:{
+//         activeTintColor:colors.accent,
+//         inactiveTintColor:colors.textColor,
+//         activeBackgroundColor:colors.background,
+//         inactiveBackgroundColor:colors.background,
+//         style:{
+//             backgroundColor:colors.background,
+//             // position:'relative',
+//             // left:0,
+//             // bottom:0,
+//             // zIndex:3000
+//         },
+//         indicatorStyle:{width:0},
+//         showIcon:true,
+//         iconStyle:{width:50,height:40},
+//         upperCaseLabel:false
+//     }
+// }
 
-)
+// )
 
 
 // let ListContacts = ({navigation})=>(<ListContactContainer navigation={navigation} coreState={props.coreState}/>);

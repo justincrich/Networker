@@ -22,7 +22,8 @@ class ListContactContainer extends React.Component{
 
         };
         this.createContact = this.createContact.bind(this);
-        
+        this.createContact = this.createContact.bind(this);
+        this.openContact = this.openContact.bind(this);
         
     }
 
@@ -40,8 +41,7 @@ class ListContactContainer extends React.Component{
         // })
 
         this.props.Actions.getAllContacts();
-        this.createContact = this.createContact.bind(this);
-        this.openContact = this.openContact.bind(this);
+        
     }
 
  
@@ -74,6 +74,7 @@ class ListContactContainer extends React.Component{
         this.props.navigation.dispatch(createAction);
     }
     openContact(item){
+        this.props.Actions.getContact(item.id)
         const viewAction = NavigationActions.navigate({
             routeName:'Contact',
             params:{

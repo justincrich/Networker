@@ -2,8 +2,10 @@ import React from 'react';
 import {View,ScrollView,Text, StyleSheet, TextInput} from 'react-native';
 import {colors,fonts} from '../../common_styles';
 import { Icon } from 'react-native-elements';
-import { format, parse , isValidNumber} from 'libphonenumber-js'
+import { format, parse , isValidNumber} from 'libphonenumber-js';
 import _ from 'lodash';
+import JText from '../base_components/jtext_component';
+import JTextInput from '../base_components/jfield_component';
 //components
 import Header from '../headers/header_container'
 import ImageUpload from '../image_upload/image_upload_component'
@@ -60,14 +62,9 @@ export default class UpsertContact extends React.Component{
                 flex:1,
             },
             textInputNCT:{
-               
                 fontSize:fonts.sizes.h6,
-                borderBottomWidth:1,
-                borderColor:colors.fieldColor,
                 marginBottom:10,
-                overflow:'hidden',
                 height:50,
-            
             },
             textInputNotificationText:{
                 position:'relative',
@@ -151,33 +148,31 @@ export default class UpsertContact extends React.Component{
                         iconStyle={this.styles.fieldIcon}
                     />
                     <View style={this.styles.textInputContainer}>
-                        <TextInput
-                            underlineColorAndroid = 'rgba(0,0,0,0)'
+                        <JTextInput
                             style={this.styles.textInputNCT}
                             placeholder={'First Name'}
                             value={this.state.firstName}
                             onChangeText={(text)=>this.setState({firstName:text})}
                         />
-                        <Text style={[
+                        <JText style={[
                             this.styles.textInputNotificationText,
                             {display:!this.state.firstNameError?'none':'flex'}
                             ]}
                         >
                             {this.state.firstNameError}
-                        </Text>
+                        </JText>
                     </View>
                 </View>
                 <View style={this.styles.textRowContainer}>
                     <View style={[this.styles.fieldIcon]}/>
                     <View style={this.styles.textInputContainer}>
-                        <TextInput
-                            underlineColorAndroid = 'rgba(0,0,0,0)'
+                        <JTextInput
                             style={this.styles.textInputNCT}
                             placeholder={'Last Name'}
                             value={this.state.lastName}
                             onChangeText={(text)=>this.setState({lastName:text})}
                         />
-                        <Text style={
+                        <JText style={
                             [
                                 this.styles.textInputNotificationText,
                                 {display:!this.state.lastNameError?
@@ -185,7 +180,7 @@ export default class UpsertContact extends React.Component{
                             ]
                             }>
                             {this.state.lastNameError}
-                        </Text>
+                        </JText>
                     </View>
                 </View>
             </View>
@@ -199,7 +194,7 @@ export default class UpsertContact extends React.Component{
                         iconStyle={this.styles.fieldIcon}
                     />
                     <View style={this.styles.textInputContainer}>
-                    <TextInput
+                    <JTextInput
                         underlineColorAndroid = 'rgba(0,0,0,0)'
                         style={this.styles.textInputNCT}
                         value={this.state.company}
@@ -217,7 +212,7 @@ export default class UpsertContact extends React.Component{
                         iconStyle={this.styles.fieldIcon}
                     />
                     <View style={this.styles.textInputContainer}>
-                        <TextInput
+                        <JTextInput
                             underlineColorAndroid = 'rgba(0,0,0,0)'
                             style={this.styles.textInputNCT}
                             value={this.state.jobTitle}
@@ -236,19 +231,20 @@ export default class UpsertContact extends React.Component{
                         iconStyle={this.styles.fieldIcon}
                     />
                     <View style={this.styles.textInputContainer}>
-                        <TextInput
+                        <JTextInput
                             underlineColorAndroid = 'rgba(0,0,0,0)'
                             style={this.styles.textInputNCT}
                             value={this.state.email}
                             placeholder={'Email'}
+                            keyboardType='email-address'
                             onChangeText={(text)=>this.setState({email:text})}
                         />
-                        <Text style={
+                        <JText style={
                             [this.styles.textInputNotificationText,
                             {display:!this.state.emailError?'none':'flex'}]
                             }>
                             {this.state.emailError}
-                        </Text>
+                        </JText>
                     </View>
                 </View>
             </View>
@@ -261,21 +257,23 @@ export default class UpsertContact extends React.Component{
                         iconStyle={this.styles.fieldIcon}
                     />
                     <View style={this.styles.textInputContainer}>
-                        <TextInput
+                        <JTextInput
                             underlineColorAndroid = 'rgba(0,0,0,0)'
                             style={this.styles.textInputNCT}
                             value={this.state.phoneNumber}
                             placeholder={'Phone Number'}
-                            onChangeText={(text)=>this.setState({phoneNumber:text})}
-                            onBlur={this.formatPhoneNumber}
-                            
+                            onChangeText={(text)=>{
+                                this.formatPhoneNumber(text);
+                                // this.setState({phoneNumber:phoneFormat})
+                            }}
+                            keyboardType='phone-pad'
                         />
-                        <Text style={
+                        <JText style={
                             [this.styles.textInputNotificationText,
                                 {display:!this.state.phoneNumberError?'none':'flex'}]
                             }>
                             {this.state.phoneNumberError}
-                        </Text>
+                        </JText>
                     </View>
                 </View>
             </View>
@@ -289,7 +287,7 @@ export default class UpsertContact extends React.Component{
                         iconStyle={this.styles.fieldIcon}
                     />
                     <View style={this.styles.multilineTextContainer}>
-                        <TextInput
+                        <JTextInput
                             underlineColorAndroid = 'rgba(0,0,0,0)'
                             multiline={true}
                             numberOfLines={4}
@@ -304,14 +302,15 @@ export default class UpsertContact extends React.Component{
     </View>)
     }
 
-    formatPhoneNumber(){
-        let pn = parse(this.state.phoneNumber,'US');
+    formatPhoneNumber(text){
+        let pn = parse(text,'US');
         let formatted = format(pn,'National');
-        if(this.state.phoneNumber !='' && formatted){
+        // if(this.state.phoneNumber !='' && formatted){
             
-            this.setState({phoneNumber:formatted})
+        //     this.setState({phoneNumber:formatted})
             
-        }
+        // }
+        this.setState({phoneNumber:formatted})
     }
 
     saveContact(){
@@ -351,6 +350,7 @@ export default class UpsertContact extends React.Component{
 
     validate(key,value){
             let emailRegularExpression = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            let phoneRegEx =/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
             let keyError = `${key}Error`;
             let isEmpty =  !value || /^\s*$/.test(value);
             let validationError = new Error();
@@ -366,7 +366,8 @@ export default class UpsertContact extends React.Component{
         else if((key==='email') && (!isEmpty && !emailRegularExpression.test(value))){
             validationError.message = `Please enter a properly formatted email address. Ex: example@example.com`;
             throw validationError;
-        }else if ((key==='phoneNumber') && (!isEmpty && !isValidNumber(parse(value,"US")))){
+        }else if ((key==='phoneNumber') && (!isEmpty && !phoneRegEx.test(value))){
+            let val = `${value}`;
             validationError.message = `Please enter a properly formatted 10 digit phone number. Ex: (555) 555-5555`;
             throw validationError;
         }
