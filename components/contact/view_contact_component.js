@@ -6,7 +6,7 @@ import {colors,fonts} from '../../common_styles';
 import { Icon } from 'react-native-elements';
 import _ from 'lodash';
 import Header from '../headers/header_container';
-import defaultImg from '../../media/profileimg.png';
+import defaultImg from '../../media/default_profile_img.png';
 import ContactBar from '../action_button/contact_info_bar/contact_info_bar_component';
 import Toast from '../toast/toast_component';
 
@@ -72,20 +72,23 @@ export default class ViewContact extends React.Component{
         this.showContactToast = this.showContactToast.bind(this);
         this.removeContactToast = this.removeContactToast.bind(this);
         this.getCompanyAndTitle = this.getCompanyAndTitle.bind(this);
+        this.getProfileImg = this.getProfileImg.bind(this);
     }
 
     render(){
-        console.log('VIEW COMPONENT',this.props)
+        
         return(
             <View style={this.styles.body}>
                 <Header 
                     type='view'
+                    goBack={this.props.goBack}
+                    editContact={this.props.editContact}
                 />
                 <JBody style={{flex:1,width:'100%'}}>
                     <View style={this.styles.header}>
                         <View style={this.styles.imgContainer}>
                             <Image
-                                source={{uri:this.props.contact.pictureUri}}
+                                source={this.getProfileImg()}
                                 style={this.styles.image}
                             />
                         </View>
@@ -136,8 +139,14 @@ export default class ViewContact extends React.Component{
             return `${job} ${divider} ${company}`;
         }
     }
+
+    getProfileImg(){
+        
+        let {pictureUri} = this.props.contact;
+        return !pictureUri? defaultImg : {uri:pictureUri};
+    }
+
     showContactToast(message){
-        console.log('hiii')
         if(this.state.message === ''){
             this.setState({message:message});
         }

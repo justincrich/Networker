@@ -104,6 +104,11 @@ export default class UpsertContact extends React.Component{
         this.setPicture = this.setPicture.bind(this);
     }
     
+    componentWillMount(){
+        this.setState({
+            ...this.props.contact
+        })
+    }
     
     render(){
         
@@ -114,15 +119,18 @@ export default class UpsertContact extends React.Component{
                     type='upsert'
                     saveContact = {this.saveContact}
                     goBack={this.props.goBack}
+                    contact={this.props.contact}
                 />
                 <ScrollView 
                     keyboardShouldPersistTaps={'handled'}
                 >
                     <View style={this.styles.addContactContainer}>
-                        <View style={this.styles.imageContainer}
-                            
-                        >  
-                            <ImageUpload type='user' setPicture={this.setPicture}/>
+                        <View style={this.styles.imageContainer}>  
+                            <ImageUpload 
+                                type='user' 
+                                setPicture={this.setPicture}
+                                contactUri={this.props.contact.pictureUri}
+                            />
                         </View>
                         {this.getFields()}
                     </View>
@@ -262,10 +270,7 @@ export default class UpsertContact extends React.Component{
                             style={this.styles.textInputNCT}
                             value={this.state.phoneNumber}
                             placeholder={'Phone Number'}
-                            onChangeText={(text)=>{
-                                this.formatPhoneNumber(text);
-                                // this.setState({phoneNumber:phoneFormat})
-                            }}
+                            onChangeText={this.formatPhoneNumber}
                             keyboardType='phone-pad'
                         />
                         <JText style={
@@ -305,12 +310,8 @@ export default class UpsertContact extends React.Component{
     formatPhoneNumber(text){
         let pn = parse(text,'US');
         let formatted = format(pn,'National');
-        // if(this.state.phoneNumber !='' && formatted){
-            
-        //     this.setState({phoneNumber:formatted})
-            
-        // }
-        this.setState({phoneNumber:formatted})
+        let input = !formatted? text:formatted;
+        this.setState({phoneNumber:input})
     }
 
     saveContact(){
@@ -337,7 +338,6 @@ export default class UpsertContact extends React.Component{
             
             let contact = _.pick(this.state,["firstName",
             "lastName","phoneNumber","email",'company','jobTitle','pictureUri']);
-            console.log('out',contact)
             this.props.saveContact(contact)
         }
         

@@ -58,6 +58,12 @@ export default class ImageUpload extends React.Component {
         this.selectImage = this.selectImage.bind(this);
     }
 
+    componentWillMount(){
+        this.setState({
+            image:{uri:this.props.contactUri}
+        });
+    }
+
     render(){
         return(
             <TouchableWithoutFeedback

@@ -66,7 +66,7 @@ class ListContactContainer extends React.Component{
 
     createContact(){
         const createAction = NavigationActions.navigate({
-            routeName:'Contact',
+            routeName:'Upsert',
             params:{
                 mode:'create'
             }

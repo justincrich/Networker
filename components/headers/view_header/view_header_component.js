@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet,TouchableOpacity} from 'react-native';
 import {colors,fonts} from '../../../common_styles';
 import { Icon } from 'react-native-elements';
 
@@ -30,19 +30,25 @@ export default class ViewHeader extends React.Component{
     render(){
         return(
             <View style={this.styles.container}>
-                <Icon
-                    name='arrow-back'
-                    size={30}
-                    color={colors.titleText}
-                    onPress={()=>this.props.goBack()}
-                />
-                <View style={this.styles.actionContainer}>
+                <TouchableOpacity
+                    onPress={this.props.goBack}
+                >
                     <Icon
-                        name='edit'
+                        name='arrow-back'
                         size={30}
                         color={colors.titleText}
-                        onPress={()=>this.props.edit()}
                     />
+                </TouchableOpacity>
+                <View style={this.styles.actionContainer}>
+                    <TouchableOpacity
+                        onPress={this.props.editContact}
+                    >
+                        <Icon
+                            name='edit'
+                            size={30}
+                            color={colors.titleText}
+                        />
+                    </TouchableOpacity>
                     <Icon
                         name='delete'
                         size={30}

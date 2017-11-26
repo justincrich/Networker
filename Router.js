@@ -6,7 +6,8 @@ import {colors} from './common_styles';
 
 //Containers
 import ListContactContainer from './containers/list_contacts/list_contacts_container';
-import ContactContainer from './containers/contact/contact_container'
+import ContactContainer from './containers/contact/contact_container';
+import UpsertContainer from './containers/contact/contact_upsert_container';
 //Components
 import Menu_Container from './containers/menu/menu_container';
 
@@ -16,8 +17,10 @@ export const ContactsStack = StackNavigator({
         screen:ListContactContainer
     },
     Contact:{
-        screen:ContactContainer,
-        
+        screen:ContactContainer, 
+    },
+    Upsert:{
+        screen:UpsertContainer
     }
 },
 {

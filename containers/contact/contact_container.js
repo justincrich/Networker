@@ -1,5 +1,6 @@
 import React from 'react';
 import {View,Text} from 'react-native';
+import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ContactsActions from '../../redux/actions/contacts_actions';
@@ -15,9 +16,9 @@ class ContactContainer extends React.Component{
         this.state={
             
         }
-        this.saveContact = this.saveContact.bind(this);
+
         this.getView = this.getView.bind(this);
-        
+        this.editContact = this.editContact.bind(this);
         
     }
 
@@ -35,7 +36,6 @@ class ContactContainer extends React.Component{
         )
     }
     getView(navParams){
-        console.log(this.props)
         const {mode,id} = navParams;
         // let mode = 'view';
         // let id =  1510816587249;
@@ -78,28 +78,27 @@ class ContactContainer extends React.Component{
         //     }
         // }
         
-        if(mode === 'create'){
-            return (
-                <UpsertContact 
-                    saveContact={this.saveContact}
-                    goBack={this.props.navigation.goBack}
-                    type='upsert'
-                />
-            )
-        }else if(mode === 'view'){
-            
-            return(
-                <ViewContact contact={contact}/>
-            )
-        }
+        return(
+            <ViewContact 
+                contact={contact}
+                goBack={this.props.navigation.goBack}
+                editContact={this.editContact}
+            />
+        )
     }
-    saveContact(contact){
+    // saveContact(contact){
         
-        this.props.Actions.requestContactCreate(contact);
-        this.props.Actions.resetContactStatus();
-        this.props.navigation.goBack();
-        // this.props.navigation.goBack();
+    //     this.props.Actions.requestContactCreate(contact);
+    //     this.props.Actions.resetContactStatus();
+    //     this.props.navigation.goBack();
+    //     // this.props.navigation.goBack();
         
+    // }
+    editContact(){
+        const viewAction = NavigationActions.navigate({
+            routeName:'Upsert'
+        });
+        this.props.navigation.dispatch(viewAction);
     }
 
 }

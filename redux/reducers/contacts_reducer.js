@@ -5,6 +5,7 @@ const initialState={
 
     contacts:[],
     requestedId:null,
+    requestDeleteId:null,
     selectedContact:{},
     status:'ready',
     error:null,
@@ -59,11 +60,43 @@ export default function ContactsReducer(state=initialState,action){
                 status:'complete'
             }
         }
+        case ActionTypes.CONTACT_REQUEST_UPDATE:{
+            return{
+                ...state,
+                status:'loading'
+            }
+        }
+        case ActionTypes.CONTACT_RESOLVE_UPDATE:{
+            return {
+                ...state,
+                status:'complete',
+                selectedContact:action.updatedContact
+            }
+        }
+        case ActionTypes.CONTACT_REQUEST_DELETE:{
+            return{
+                ...state,
+                status:'loading',
+                requestDeleteId:action.id
+            }
+        }
+        case ActionTypes.CONTACT_RESOLVE_DELETE:{
+            return{
+                ...state,
+                status:'complete'
+            }
+        }
         case ActionTypes.CONTACT_THROW_ERROR:{
             return {
                 ...state,
                 error:action.error,
                 status:'error'
+            }
+        }
+        case ActionTypes.CONTACT_CLEAR_SELECTION:{
+            return{
+                ...state,
+                selectedContact:null
             }
         }
         case ActionTypes.CONTACT_RESET_STATUS:{

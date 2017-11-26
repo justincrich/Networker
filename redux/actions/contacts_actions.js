@@ -72,19 +72,45 @@ export function requestContactCreate(contact){
     }
 }
 
+export function requestDeleteContact(id){
+    return function (dispatch){
+        dispatch(beginContactDelete(id))
+        try{
+            realm.write(()=>{
+                realm.delete(realm.objectForPrimaryKey(ContactSchema,id));
+                dispatch(resolveContactDelete());
+                dispatch(clearSelectedContact());
+                dispatch(getAllContacts());
+            })
+        }catch(e){
+            dispatch(throwContactError(e));
+        }
+        
+        
+    }
+}
+
+export function requestUpdateContact(id,updates){
+    return function (dispatch){
+        dispatch(beginContactUpdate());
+        try{
+            realm.write(()=>{
+                let contact = realm.create('Contact',{id:id,...updates},true);
+                dispatch(resolveContactUpdate(contact));
+            });
+        }catch(e){
+            dispatch(throwContactError(e));
+        }
+    }
+}
+
 //Contact List
 
 export function getAllContacts(){
     return function (dispatch){
         dispatch(beginGetAllContacts());
         try{
-            // Realm.open({schema:[schema]})
-            // .then(realm=>{
-            //     let contacts = realm.objects('Contact').sorted('lastName','firstName');
-            //     console.log('BLLLAAA',contacts,contacts.length);
-            // })
             let contacts = realm.objects('Contact').sorted('lastName','firstName');
-            
             dispatch(receiveAllContacts(Array.from(contacts.values())));
             
         }catch(e){
@@ -97,6 +123,12 @@ export function getAllContacts(){
 export function resetContactStatus(){
     return{
         type:ActionTypes.CONTACT_RESET_STATUS,
+    }
+}
+
+export function clearSelectedContact(){
+    return{
+        type:ActionTypes.CONTACT_CLEAR_SELECTION
     }
 }
 
@@ -127,6 +159,37 @@ function resolveContactCreate(){
         type: ActionTypes.CONTACT_RESOLVE_CREATE,
     }
 }
+
+//UPDATE CONTACT
+
+function beginContactUpdate(){
+    return{
+        type:ActionTypes.CONTACT_REQUEST_UPDATE
+    }
+}
+
+function resolveContactUpdate(contact){
+    return{
+        type:ActionTypes.CONTACT_RESOLVE_UPDATE,
+        updatedContact:contact
+    }
+}
+
+//DELETE CONTACT
+
+function beginContactDelete(id){
+    return{
+        type:ActionTypes.CONTACT_REQUEST_DELETE,
+        id:id
+    }
+}
+
+function resolveContactDelete(){
+    return{
+        type:ActionTypes.CONTACT_RESOLVE_DELETE
+    }
+}
+
 
 function throwContactError(e){
     return{

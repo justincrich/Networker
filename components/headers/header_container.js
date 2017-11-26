@@ -100,7 +100,11 @@ export default class Header extends React.Component{
             )
         }else if(type==='view'){
             return(
-                <ViewHeader user={this.props.user}/>
+                <ViewHeader 
+                    user={this.props.user}
+                    goBack={this.props.goBack}
+                    editContact={this.props.editContact}
+                />
             )
         }
         
