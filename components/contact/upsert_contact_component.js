@@ -111,7 +111,7 @@ export default class UpsertContact extends React.Component{
     }
     
     render(){
-        
+        let {contact} = this.props;
         return(
             <View style={this.styles.body}>
                 <Header 
@@ -129,7 +129,7 @@ export default class UpsertContact extends React.Component{
                             <ImageUpload 
                                 type='user' 
                                 setPicture={this.setPicture}
-                                contactUri={this.props.contact.pictureUri}
+                                contactUri={this.state.contactUri}
                             />
                         </View>
                         {this.getFields()}

@@ -41,7 +41,12 @@ class UpsertContainer extends React.Component{
 
     saveContact(contactUpdates){
         let {data:{selectedContact:contactInView,error,status}} = this.props;
-        this.props.Actions.requestUpdateContact(contactInView.id,contactUpdates);
+        let {mode} = this.props.navigation.state.params;
+        if(mode==='edit'){
+            this.props.Actions.requestUpdateContact(contactInView.id,contactUpdates);
+        }else if(mode==='create'){
+            this.props.Actions.requestContactCreate(contactUpdates)
+        }
         console.log('cnsideration')
         if(status==='error'){
             this.props.Actions.resetContactStatus();

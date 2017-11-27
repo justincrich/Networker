@@ -104,6 +104,7 @@ export default class Header extends React.Component{
                     user={this.props.user}
                     goBack={this.props.goBack}
                     editContact={this.props.editContact}
+                    deleteContact={this.props.deleteContact}
                 />
             )
         }

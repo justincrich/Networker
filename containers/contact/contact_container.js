@@ -19,28 +19,32 @@ class ContactContainer extends React.Component{
 
         this.getView = this.getView.bind(this);
         this.editContact = this.editContact.bind(this);
-        
+        this.deleteContact = this.deleteContact.bind(this);
     }
 
  
 
     render(){
+        console.log(this.props)
+        let {data:{selectedContact:contact}} = this.props;
         return(
             <View style={{
                 position:'relative',
                 flex:1,
                 backgroundColor:colors.background,
                 }}>
-                {this.getView(this.props.navigation.state.params)}
+                {
+                    this.getView(contact)
+                }
             </View>
         )
     }
-    getView(navParams){
-        const {mode,id} = navParams;
+    getView(contact){
+        const {mode,id} = this.props.navigation.state.params;
         // let mode = 'view';
         // let id =  1510816587249;
         
-        let {data:{selectedContact:contact}} = this.props;
+        
         // let contact={
         //     id:12345,
         //     firstName:'Justin',
@@ -81,8 +85,9 @@ class ContactContainer extends React.Component{
         return(
             <ViewContact 
                 contact={contact}
-                goBack={this.props.navigation.goBack}
+                goBack={()=>this.props.navigation.goBack()}
                 editContact={this.editContact}
+                deleteContact={this.deleteContact}
             />
         )
     }
@@ -96,9 +101,19 @@ class ContactContainer extends React.Component{
     // }
     editContact(){
         const viewAction = NavigationActions.navigate({
-            routeName:'Upsert'
+            routeName:'Upsert',
+            params:{
+                mode:'edit'
+            }
         });
         this.props.navigation.dispatch(viewAction);
+    }
+    deleteContact(){
+        let {data:{selectedContact:contact}} = this.props;
+        this.props.navigation.goBack();
+        this.props.Actions.requestDeleteContact(contact.id);
+        
+        
     }
 
 }

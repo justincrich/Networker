@@ -83,38 +83,41 @@ export default class ViewContact extends React.Component{
                     type='view'
                     goBack={this.props.goBack}
                     editContact={this.props.editContact}
+                    deleteContact={this.props.deleteContact}
                 />
-                <JBody style={{flex:1,width:'100%'}}>
-                    <View style={this.styles.header}>
-                        <View style={this.styles.imgContainer}>
-                            <Image
-                                source={this.getProfileImg()}
-                                style={this.styles.image}
-                            />
+                {this.props.contact &&
+                    <JBody style={{flex:1,width:'100%'}}>
+                        <View style={this.styles.header}>
+                            <View style={this.styles.imgContainer}>
+                                <Image
+                                    source={this.getProfileImg()}
+                                    style={this.styles.image}
+                                />
+                            </View>
+                            <View
+                                style={this.styles.personInfoContainer}
+                            >
+                                <JText style={this.styles.firstLastName}>
+                                    {`${this.props.contact.firstName} ${this.props.contact.lastName}`}
+                                </JText>
+                                <JText style={this.styles.companyTitle}>
+                                    {this.getCompanyAndTitle()}
+                                </JText>
+                            </View>
                         </View>
-                        <View
-                            style={this.styles.personInfoContainer}
+                        <View 
+                            style={this.styles.contactInfo}
                         >
-                            <JText style={this.styles.firstLastName}>
-                                {`${this.props.contact.firstName} ${this.props.contact.lastName}`}
-                            </JText>
-                            <JText style={this.styles.companyTitle}>
-                                {this.getCompanyAndTitle()}
-                            </JText>
+                            
+                                <ContactBar
+                                    contact={this.props.contact}
+                                    showValue={this.showContactToast}
+                                />
+                            
                         </View>
-                    </View>
-                    <View 
-                        style={this.styles.contactInfo}
-                    >
                         
-                            <ContactBar
-                                contact={this.props.contact}
-                                showValue={this.showContactToast}
-                            />
-                        
-                    </View>
-                    
-                </JBody>
+                    </JBody>
+                }
                 {
                     this.state.message != '' &&
                     <Toast 

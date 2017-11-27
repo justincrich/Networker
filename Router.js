@@ -14,7 +14,8 @@ import Menu_Container from './containers/menu/menu_container';
 
 export const ContactsStack = StackNavigator({
     ListContacts:{
-        screen:ListContactContainer
+        screen:ListContactContainer,
+        title:'ListContacts'
     },
     Contact:{
         screen:ContactContainer, 

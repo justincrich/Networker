@@ -54,7 +54,7 @@ export default class ViewHeader extends React.Component{
                         size={30}
                         iconStyle={{marginLeft:30}}
                         color={colors.titleText}
-                        onPress={()=>this.props.delete()}
+                        onPress={this.props.deleteContact}
                     />
                 </View>
             </View>

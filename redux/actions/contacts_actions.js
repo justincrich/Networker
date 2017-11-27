@@ -24,9 +24,11 @@ export function getContact(id){
     return function (dispatch){
         dispatch(beginGetContact(id));
         try{
+            //let query = `id = ${id}`;
+            //let contact = realm.objects('Contact').filtered(query);
             const contact = realm.objectForPrimaryKey(ContactSchema,id);
-            //console.log('IN ACTION',contact.value())
-            dispatch(resolveGetContact(contact));
+            //console.log('IN ACTION',Object.assign({},contact))
+            dispatch(resolveGetContact(Object.assign({},contact)));
         }catch(e){
             dispatch(throwContactError(e))
         }
@@ -76,11 +78,18 @@ export function requestDeleteContact(id){
     return function (dispatch){
         dispatch(beginContactDelete(id))
         try{
+            
             realm.write(()=>{
-                realm.delete(realm.objectForPrimaryKey(ContactSchema,id));
+                let query = `id = ${id}`;
+                let contact = realm.objects('Contact').filtered(query)[0];
+                //let contact = realm.objectForPrimaryKey(ContactSchema,id);
+                console.log('new contact delete!!!',contact.id)
+                realm.delete(contact);
+                dispatch(getAllContacts());
                 dispatch(resolveContactDelete());
                 dispatch(clearSelectedContact());
-                dispatch(getAllContacts());
+                
+                
             })
         }catch(e){
             dispatch(throwContactError(e));
@@ -96,7 +105,7 @@ export function requestUpdateContact(id,updates){
         try{
             realm.write(()=>{
                 let contact = realm.create('Contact',{id:id,...updates},true);
-                dispatch(resolveContactUpdate(contact));
+                dispatch(resolveContactUpdate(Object.assign({},contact)));
             });
         }catch(e){
             dispatch(throwContactError(e));
@@ -111,7 +120,11 @@ export function getAllContacts(){
         dispatch(beginGetAllContacts());
         try{
             let contacts = realm.objects('Contact').sorted('lastName','firstName');
-            dispatch(receiveAllContacts(Array.from(contacts.values())));
+            let contactArr = contacts.map(contact=>{
+                return Object.assign({},contact);
+            });
+            console.log('ARR RESULT',contactArr);
+            dispatch(receiveAllContacts(contactArr));
             
         }catch(e){
             dispatch(throwContactError(e))
