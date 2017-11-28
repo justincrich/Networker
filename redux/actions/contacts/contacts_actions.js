@@ -1,4 +1,4 @@
-import * as ActionTypes from '../../actiontypes/actiontypes';
+import * as ActionTypes from '../../actiontypes/contacts/contacts_actiontypes';
 import realm from '../../../data/realm';
 import {ContactSchema} from '../../../data/schemas';
 // import {ContactSchema} from '../../data/schemas';

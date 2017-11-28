@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for networker/components/action_button/contact_info_bar/contact_info_more_options_component.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">networker/components/action_button/contact_info_bar</a> contact_info_more_options_component.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import {View,
+        StyleSheet,
+        Animated,
+        ScrollView,
+        TouchableOpacity,
+        Linking
+        } from 'react-native';
+import {colors,fonts} from '../../../common_styles';
+import { Icon } from 'react-native-elements';
+export default class ContactInfoMoreOptions extends React.Component{
+    constructor(props)<span class="cstat-no" title="statement not covered" >{</span>
+        super(props);
+        //animated values
+        this.<span class="cstat-no" title="statement not covered" >container_opacity = n</span>ew Animated.Value(0);
+        this.<span class="cstat-no" title="statement not covered" >more_contacts_open_animation = n</span>ew Animated.Value(0);
+        this.more_contacts_width = this.more_contacts_open_animation.interpolate({
+            inputRange:[0,1],
+            outputRange:["0%","100%"],
+            extrapolate:"clamp"
+        });
+        this.<span class="cstat-no" title="statement not covered" >opacity_animated = n</span>ew Animated.Value(0);
+        this.styles=StyleSheet.create({
+            body:{
+                position:'absolute',
+                zIndex:1000,
+                backgroundColor:colors.accent,
+                display:'flex',
+                flexDirection:'row',
+                justifyContent:'flex-start',
+                paddingLeft:10,
+                paddingRight:10,
+                borderRadius:30,
+                width:'100%',
+                right:0
+                
+                
+            },
+            iconStyle:{
+                padding:10
+            },
+            socialContainer:{
+                display:'flex',
+                flexDirection:'row',
+                width:50,
+            },
+            closeContainer:{
+                marginLeft:'auto'
+            },
+            iconClose:{
+                
+            }
+        });
+        this.<span class="cstat-no" title="statement not covered" >state = {};</span>
+        this.<span class="cstat-no" title="statement not covered" >openLink = this.openLink.bind(this);</span>
+    }
+&nbsp;
+    componentDidMount(){
+        
+<span class="cstat-no" title="statement not covered" >        Animated.sequence([</span>
+            Animated.timing(this.opacity_animated,{
+                toValue:1,
+                duration:50
+            }),
+            Animated.parallel([
+                Animated.timing(this.container_opacity,{
+                    toValue:1,
+                    duration:100
+                }),
+                Animated.timing(this.more_contacts_open_animation,{
+                    toValue:1,
+                    duration:250
+                })
+            ]),
+&nbsp;
+            
+        ]).start()
+    }
+&nbsp;
+&nbsp;
+    render(){
+        return(
+            &lt;Animated.View style={[this.styles.body,{width:this.more_contacts_width,opacity:this.container_opacity}]}&gt;
+                &lt;Animated.View style={{opacity:this.opacity_animated,display:'flex',flexDirection:'row',width:'100%'}}&gt;
+                    &lt;ScrollView 
+                        style={[this.styles.socialContainer]}
+                        horizontal={true}
+                    &gt;
+                        {
+<span class="branch-0 cbranch-no" title="branch not covered" >                            this.props.social.facebook &amp;&amp;</span>
+                            &lt;TouchableOpacity
+                                onPress={()=&gt;<span class="fstat-no" title="function not covered" >{</span>
+                                    let <span class="cstat-no" title="statement not covered" >appUrl = `fb://profile/${this.props.social.facebook.id}`;</span>
+                                    let webUrl = this.props.<span class="cstat-no" title="statement not covered" >social.facebook.id;</span>
+<span class="cstat-no" title="statement not covered" >                                    this.openLink(appUrl,webUrl);</span>
+                                }}
+                            &gt;
+                                &lt;Icon
+                                    type='material-community'
+                                    name='facebook'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                /&gt;
+                            &lt;/TouchableOpacity&gt;
+                        }
+                        {
+<span class="branch-0 cbranch-no" title="branch not covered" >                            this.props.social.linkedin &amp;&amp;</span>
+                            &lt;TouchableOpacity
+                                onPress={()=&gt;<span class="fstat-no" title="function not covered" >{</span>
+                                    let appUrl = `linkedin://${<span class="cstat-no" title="statement not covered" >this.props.social.linkedin.id}`;</span>
+                                    let webUrl = this.props.<span class="cstat-no" title="statement not covered" >social.linkedin.url;</span>
+<span class="cstat-no" title="statement not covered" >                                    this.openLink(appUrl,webUrl)</span>
+                                }}
+                            &gt;
+                                &lt;Icon
+                                    type='material-community'
+                                    name='linkedin'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                /&gt;
+                            &lt;/TouchableOpacity&gt;
+                        }
+                        {
+<span class="branch-0 cbranch-no" title="branch not covered" >                            this.props.social.twitter &amp;&amp;</span>
+                            &lt;TouchableOpacity
+                                onPress={()=&gt;<span class="fstat-no" title="function not covered" >{</span>
+                                    let <span class="cstat-no" title="statement not covered" >appUrl = `twitter://user?screen_name=${this.props.social.twitter.username}`;</span>
+                                    let <span class="cstat-no" title="statement not covered" >webUrl = `https://twitter.com/${this.props.social.twitter.username}`;</span>
+<span class="cstat-no" title="statement not covered" >                                    this.openLink(appUrl,webUrl)</span>
+                                }}
+                            &gt;
+                                &lt;Icon
+                                    type='material-community'
+                                    name='twitter'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                /&gt;
+                            &lt;/TouchableOpacity&gt;
+                        }
+                        {
+<span class="branch-0 cbranch-no" title="branch not covered" >                            this.props.social.pinterest&amp;&amp;</span>
+                            &lt;TouchableOpacity
+                                onPress={()=&gt;<span class="fstat-no" title="function not covered" >{</span>
+                                    let <span class="cstat-no" title="statement not covered" >appUrl = `pinterest://www.pinterest.com/${this.props.social.pinterest.username}`;</span>
+                                    let <span class="cstat-no" title="statement not covered" >webUrl = `https://pinterest.com/${this.props.social.pinterest.username}`;</span>
+<span class="cstat-no" title="statement not covered" >                                    this.openLink(appUrl,webUrl)</span>
+                                }}
+                            &gt;
+                                &lt;Icon
+                                    type='material-community'
+                                    name='pinterest'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                /&gt;
+                            &lt;/TouchableOpacity&gt;
+                        }
+                        {
+<span class="branch-0 cbranch-no" title="branch not covered" >                            this.props.social.snapchat&amp;&amp;</span>
+                            &lt;TouchableOpacity
+                            onPress={()=&gt;<span class="fstat-no" title="function not covered" >{</span>
+                                let <span class="cstat-no" title="statement not covered" >appUrl = `snapchat://add/${this.props.social.snapchat.username}`;</span>
+<span class="cstat-no" title="statement not covered" >                                this.openLink(appUrl)</span>
+                            }}
+                            &gt;
+                                &lt;Icon
+                                    type='material-community'
+                                    name='snapchat'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                /&gt;
+                            &lt;/TouchableOpacity&gt;
+                        }
+                        {
+<span class="branch-0 cbranch-no" title="branch not covered" >                            this.props.social.instagram &amp;&amp;</span>
+                            &lt;TouchableOpacity
+                            onPress={()=&gt;<span class="fstat-no" title="function not covered" >{</span>
+                                let <span class="cstat-no" title="statement not covered" >appUrl = `instagram://user?username=${this.props.social.instagram.username}`;</span>
+<span class="cstat-no" title="statement not covered" >                                this.openLink(appUrl)</span>
+                            }}
+                            &gt;
+                                &lt;Icon
+                                    type='material-community'
+                                    name='instagram'
+                                    color={colors.background}
+                                    iconStyle={this.styles.iconStyle}
+                                    size={30}
+                                /&gt;
+                            &lt;/TouchableOpacity&gt;
+                        }
+&nbsp;
+                    &lt;/ScrollView&gt;
+                &lt;TouchableOpacity
+                    style={this.styles.closeContainer}
+                    onPress={()=&gt;<span class="fstat-no" title="function not covered" >{</span>
+                        Animated.<span class="cstat-no" title="statement not covered" >sequence([</span>
+                            Animated.parallel([
+                                Animated.timing(this.more_contacts_open_animation,{
+                                    toValue:.2,
+                                    duration:250
+                                }),
+                                Animated.timing(this.opacity_animated,{
+                                    toValue:0,
+                                    duration:100
+                                }),
+                                
+                            ]),
+                            Animated.timing(this.container_opacity,{
+                                toValue:0,
+                                duration:50
+                            })
+                        ]).start(this.props.closeView)
+                        
+                        
+                    }}
+                    &gt;
+                        &lt;Icon
+                            type='material-community'
+                            name='close'
+                            color={colors.background}
+                            iconStyle={[this.styles.iconClose,this.styles.iconStyle]}
+                            size={30}
+                            
+                        /&gt;
+                    &lt;/TouchableOpacity&gt;
+                &lt;/Animated.View&gt;
+            &lt;/Animated.View&gt;
+        )
+    }
+&nbsp;
+    openLink(appUrl,webUrl){
+<span class="cstat-no" title="statement not covered" >        Linking.canOpenURL(appUrl)</span>
+        .then((<span class="fstat-no" title="function not covered" >supported)=&gt;{</span>
+            if(<span class="cstat-no" title="statement not covered" >!supported &amp;&amp; webUrl){</span>
+<span class="cstat-no" title="statement not covered" >                Linking.openURL(webUrl);</span>
+            }else{
+<span class="cstat-no" title="statement not covered" >                Linking.openURL(appUrl);</span>
+            }
+        }).catch(<span class="fstat-no" title="function not covered" >err=&gt;<span class="cstat-no" title="statement not covered" ></span>console.</span>error('An error occurred',err.message))
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Nov 28 2017 12:10:18 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

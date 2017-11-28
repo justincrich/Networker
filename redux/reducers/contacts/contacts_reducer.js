@@ -1,4 +1,4 @@
-import * as ActionTypes from '../../actiontypes/actiontypes';
+import * as ActionTypes from '../../actiontypes/contacts/contacts_actiontypes';
 import {contactsInitialState} from '../initial_states';
 
 
@@ -75,7 +75,8 @@ export default function ContactsReducer(state=contactsInitialState,action){
         case ActionTypes.CONTACT_RESOLVE_DELETE:{
             return{
                 ...state,
-                status:'complete'
+                status:'complete',
+                requestDeleteId:null
             }
         }
         case ActionTypes.CONTACT_THROW_ERROR:{
