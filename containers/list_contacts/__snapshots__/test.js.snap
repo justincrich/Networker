@@ -1,0 +1,335 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact List Container renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ListContactContainer
+    Actions={
+      Object {
+        "beginContactCreate": [Function],
+        "beginContactDelete": [Function],
+        "beginContactUpdate": [Function],
+        "beginGetAllContacts": [Function],
+        "beginGetContact": [Function],
+        "clearSelectedContact": [Function],
+        "getAllContacts": [Function],
+        "getContact": [Function],
+        "receiveAllContacts": [Function],
+        "requestContactCreate": [Function],
+        "requestDeleteContact": [Function],
+        "requestUpdateContact": [Function],
+        "resetContactStatus": [Function],
+        "resolveContactCreate": [Function],
+        "resolveContactDelete": [Function],
+        "resolveContactUpdate": [Function],
+        "resolveGetContact": [Function],
+        "throwContactError": [Function],
+      }
+    }
+    data={
+      Object {
+        "contacts": Array [
+          Object {
+            "company": "Hackerpug",
+            "email": "J@j.com",
+            "firstName": "Justin",
+            "id": 1511821971418,
+            "jobTitle": "Developer",
+            "lastName": "Rich",
+            "notes": "Hi Justin",
+            "phoneNumber": "(555) 555-5555",
+            "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+          },
+          Object {
+            "company": "Hackerpug",
+            "email": "s@s.com",
+            "firstName": "Sam",
+            "id": 1511821971417,
+            "jobTitle": "Product Manager",
+            "lastName": "Joe",
+            "notes": "Hi Sam",
+            "phoneNumber": "(555) 555-5555",
+            "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+          },
+        ],
+        "error": null,
+        "requestDeleteId": null,
+        "requestedId": null,
+        "selectedContact": undefined,
+        "status": "ready",
+      }
+    }
+    navigation={
+      Object {
+        "navigate": [Function],
+        "state": Object {
+          "routeName": "ListContacts",
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Header
+          navigate={[Function]}
+          routeName="ListContacts"
+          type="search"
+        />,
+        <ActionButton
+          name="md-add"
+          onPress={[Function]}
+          type="ionicon"
+        />,
+        <ListContactComponent
+          contacts={
+            Array [
+              Object {
+                "company": "Hackerpug",
+                "email": "J@j.com",
+                "firstName": "Justin",
+                "id": 1511821971418,
+                "jobTitle": "Developer",
+                "lastName": "Rich",
+                "notes": "Hi Justin",
+                "phoneNumber": "(555) 555-5555",
+                "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+              },
+              Object {
+                "company": "Hackerpug",
+                "email": "s@s.com",
+                "firstName": "Sam",
+                "id": 1511821971417,
+                "jobTitle": "Product Manager",
+                "lastName": "Joe",
+                "notes": "Hi Sam",
+                "phoneNumber": "(555) 555-5555",
+                "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+              },
+            ]
+          }
+          openContact={[Function]}
+        />,
+      ],
+      "style": Object {
+        "flex": 1,
+        "position": "relative",
+        "top": 0,
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "navigate": [Function],
+          "routeName": "ListContacts",
+          "type": "search",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "name": "md-add",
+          "onPress": [Function],
+          "type": "ionicon",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "contacts": Array [
+            Object {
+              "company": "Hackerpug",
+              "email": "J@j.com",
+              "firstName": "Justin",
+              "id": 1511821971418,
+              "jobTitle": "Developer",
+              "lastName": "Rich",
+              "notes": "Hi Justin",
+              "phoneNumber": "(555) 555-5555",
+              "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+            },
+            Object {
+              "company": "Hackerpug",
+              "email": "s@s.com",
+              "firstName": "Sam",
+              "id": 1511821971417,
+              "jobTitle": "Product Manager",
+              "lastName": "Joe",
+              "notes": "Hi Sam",
+              "phoneNumber": "(555) 555-5555",
+              "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+            },
+          ],
+          "openContact": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Header
+            navigate={[Function]}
+            routeName="ListContacts"
+            type="search"
+          />,
+          <ActionButton
+            name="md-add"
+            onPress={[Function]}
+            type="ionicon"
+          />,
+          <ListContactComponent
+            contacts={
+              Array [
+                Object {
+                  "company": "Hackerpug",
+                  "email": "J@j.com",
+                  "firstName": "Justin",
+                  "id": 1511821971418,
+                  "jobTitle": "Developer",
+                  "lastName": "Rich",
+                  "notes": "Hi Justin",
+                  "phoneNumber": "(555) 555-5555",
+                  "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+                },
+                Object {
+                  "company": "Hackerpug",
+                  "email": "s@s.com",
+                  "firstName": "Sam",
+                  "id": 1511821971417,
+                  "jobTitle": "Product Manager",
+                  "lastName": "Joe",
+                  "notes": "Hi Sam",
+                  "phoneNumber": "(555) 555-5555",
+                  "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+                },
+              ]
+            }
+            openContact={[Function]}
+          />,
+        ],
+        "style": Object {
+          "flex": 1,
+          "position": "relative",
+          "top": 0,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "navigate": [Function],
+            "routeName": "ListContacts",
+            "type": "search",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "name": "md-add",
+            "onPress": [Function],
+            "type": "ionicon",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "contacts": Array [
+              Object {
+                "company": "Hackerpug",
+                "email": "J@j.com",
+                "firstName": "Justin",
+                "id": 1511821971418,
+                "jobTitle": "Developer",
+                "lastName": "Rich",
+                "notes": "Hi Justin",
+                "phoneNumber": "(555) 555-5555",
+                "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+              },
+              Object {
+                "company": "Hackerpug",
+                "email": "s@s.com",
+                "firstName": "Sam",
+                "id": 1511821971417,
+                "jobTitle": "Product Manager",
+                "lastName": "Joe",
+                "notes": "Hi Sam",
+                "phoneNumber": "(555) 555-5555",
+                "pictureUri": "file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg",
+              },
+            ],
+            "openContact": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "context": Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+    },
+  },
+}
+`;

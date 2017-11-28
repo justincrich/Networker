@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1511850812899" clover="3.2.0">
+  <project timestamp="1511850812899" name="All files">
+    <metrics statements="119" coveredstatements="28" conditionals="42" coveredconditionals="4" methods="43" coveredmethods="1" elements="204" coveredelements="33" complexity="0" loc="119" ncloc="119" packages="15" files="20" classes="20">
+      <package name="networker">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="common_styles.js" path="/Users/justin/Documents/coding/Projects/networker/common_styles.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+        </file>
+        <file name="testsetup.js" path="/Users/justin/Documents/coding/Projects/networker/testsetup.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="5" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.action_button">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <file name="action_button_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/action_button/action_button_component.js">
+          <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.base_components">
+        <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="jtext_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/base_components/jtext_component.js">
+          <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.headers">
+        <metrics statements="12" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <file name="header_container.js" path="/Users/justin/Documents/coding/Projects/networker/components/headers/header_container.js">
+          <metrics statements="12" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="55" count="0" type="stmt"/>
+          <line num="72" count="0" type="stmt"/>
+          <line num="89" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="90" count="0" type="stmt"/>
+          <line num="97" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="98" count="0" type="stmt"/>
+          <line num="101" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="102" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.headers.search_header">
+        <metrics statements="37" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="16" coveredmethods="0"/>
+        <file name="search_header_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/headers/search_header/search_header_component.js">
+          <metrics statements="11" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="0"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="67" count="0" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="84" count="0" type="stmt"/>
+          <line num="88" count="0" type="stmt"/>
+        </file>
+        <file name="search_input_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/headers/search_header/search_input_component.js">
+          <metrics statements="26" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="0"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="65" count="0" type="stmt"/>
+          <line num="66" count="0" type="stmt"/>
+          <line num="67" count="0" type="stmt"/>
+          <line num="71" count="0" type="stmt"/>
+          <line num="72" count="0" type="stmt"/>
+          <line num="73" count="0" type="stmt"/>
+          <line num="74" count="0" type="stmt"/>
+          <line num="79" count="0" type="stmt"/>
+          <line num="83" count="0" type="stmt"/>
+          <line num="94" count="0" type="stmt"/>
+          <line num="103" count="0" type="stmt"/>
+          <line num="104" count="0" type="stmt"/>
+          <line num="108" count="0" type="stmt"/>
+          <line num="134" count="0" type="stmt"/>
+          <line num="152" count="0" type="stmt"/>
+          <line num="167" count="0" type="stmt"/>
+          <line num="186" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.headers.upsert_header">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <file name="upsert_header_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/headers/upsert_header/upsert_header_component.js">
+          <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="65" count="0" type="stmt"/>
+          <line num="72" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.headers.view_header">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <file name="view_header_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/headers/view_header/view_header_component.js">
+          <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.list_contacts">
+        <metrics statements="15" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <file name="list_contacts_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/list_contacts/list_contacts_component.js">
+          <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+        </file>
+        <file name="list_row_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/list_contacts/list_row_component.js">
+          <metrics statements="9" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="75" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.components.menu">
+        <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <file name="menu_component.js" path="/Users/justin/Documents/coding/Projects/networker/components/menu/menu_component.js">
+          <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="91" count="0" type="stmt"/>
+          <line num="105" count="0" type="stmt"/>
+          <line num="106" count="0" type="stmt"/>
+          <line num="137" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.containers.list_contacts">
+        <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="list_contacts_container.js" path="/Users/justin/Documents/coding/Projects/networker/containers/list_contacts/list_contacts_container.js">
+          <metrics statements="9" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="19" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="43" count="1" type="stmt"/>
+          <line num="74" count="0" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="85" count="0" type="stmt"/>
+          <line num="89" count="1" type="stmt"/>
+        </file>
+        <file name="test_data.js" path="/Users/justin/Documents/coding/Projects/networker/containers/list_contacts/test_data.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.data">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="realm.js" path="/Users/justin/Documents/coding/Projects/networker/data/realm.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+        <file name="schemas.js" path="/Users/justin/Documents/coding/Projects/networker/data/schemas.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="3" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.media">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="default_profile_img.png" path="/Users/justin/Documents/coding/Projects/networker/media/default_profile_img.png">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.redux.actions.contacts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="contacts_actions.js" path="/Users/justin/Documents/coding/Projects/networker/redux/actions/contacts/contacts_actions.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="networker.redux.actiontypes">
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="actiontypes.js" path="/Users/justin/Documents/coding/Projects/networker/redux/actiontypes/actiontypes.js">
+          <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="2" count="3" type="stmt"/>
+          <line num="3" count="3" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="12" count="3" type="stmt"/>
+          <line num="13" count="3" type="stmt"/>
+          <line num="14" count="3" type="stmt"/>
+          <line num="15" count="3" type="stmt"/>
+          <line num="17" count="3" type="stmt"/>
+          <line num="18" count="3" type="stmt"/>
+          <line num="21" count="3" type="stmt"/>
+          <line num="22" count="3" type="stmt"/>
+          <line num="25" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="networker.redux.reducers.contacts">
+        <metrics statements="2" coveredstatements="1" conditionals="16" coveredconditionals="4" methods="0" coveredmethods="0"/>
+        <file name="contacts_reducer.js" path="/Users/justin/Documents/coding/Projects/networker/redux/reducers/contacts/contacts_reducer.js">
+          <metrics statements="2" coveredstatements="1" conditionals="16" coveredconditionals="4" methods="0" coveredmethods="0"/>
+          <line num="37" count="1" type="stmt"/>
+          <line num="101" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

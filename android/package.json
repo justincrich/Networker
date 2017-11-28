@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "enzyme-adapter-react-15": "^1.0.5"
+  }
+}
