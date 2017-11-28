@@ -1,4 +1,8 @@
 import Realm from 'realm';
-import {ContactSchema} from './schemas';
+import {ContactSchema,InteractionSchema} from './schemas';
+let schemaVersion = 1;
 
-export default new Realm({schema:[ContactSchema]})
+export default new Realm({
+    schema:[ContactSchema, InteractionSchema],
+    schemaVersion:schemaVersion,
+});

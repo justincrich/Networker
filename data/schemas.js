@@ -13,5 +13,20 @@ ContactSchema.schema = {
         notes:'string?',
         jobTitle:'string?',
         company:'string?',
+        interactions:{type:'list',objectType:'Interaction'}
+    }
+}
+
+export class InteractionSchema extends Realm.Object {};
+InteractionSchema.schema = {
+    name:'Interaction',
+    primaryKey:'id',
+    properties:{
+        id:{type:'int',default:Date.now()},
+        type:'string',
+        contact:{type:'Contact'},
+        details:'string',
+        date:{type:'date',default:new Date(), optional:true}
+
     }
 }
