@@ -5,7 +5,7 @@ import _ from 'lodash';
 import {Icon} from 'react-native-elements';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as ContactsActions from '../../redux/actions/contacts_actions';
+import * as ContactsActions from '../../redux/actions/contacts/contacts_actions';
 import {colors} from '../../common_styles';
 import {NavigationActions} from 'react-navigation';
 

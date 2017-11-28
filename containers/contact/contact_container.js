@@ -3,7 +3,7 @@ import {View,Text} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as ContactsActions from '../../redux/actions/contacts_actions';
+import * as ContactsActions from '../../redux/actions/contacts/contacts_actions';
 import UpsertContact from '../../components/contact/upsert_contact_component';
 import ViewContact from '../../components/contact/view_contact_component';
 import {colors} from '../../common_styles';

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "jest --watchAll --coverage",
     "android": "react-native run-android",
     "log-android": "react-native log-android",
     "ios": "react-native run-ios && log-ios",
@@ -14,8 +14,8 @@
     "postinstall": "rndebugger-open",
     "react-devtool": "react-devtools",
     "redux-devtool": "remotedev",
-    "build":"cd android && ./gradlew assembleRelease",
-    "startrelease":"react-native run-android --variant=release"
+    "build": "cd android && ./gradlew assembleRelease",
+    "startrelease": "react-native run-android --variant=release"
   },
   "dependencies": {
     "awesome-phonenumber": "^2.2.0",
@@ -23,7 +23,8 @@
     "libphonenumber-js": "^0.4.39",
     "lodash": "^4.17.4",
     "react": "^16.1.1",
-    "react-native": "^0.50.3",
+    "react-dom": "16",
+    "react-native": "^0.50.4",
     "react-native-cli": "^2.0.1",
     "react-native-communications": "^2.2.1",
     "react-native-elements": "^0.18.0",
@@ -42,12 +43,14 @@
   "devDependencies": {
     "babel-jest": "21.2.0",
     "babel-preset-react-native": "4.0.0",
-    "enzyme": "^3.1.1",
-    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
     "jest": "21.2.1",
+    "jest-enzyme": "^4.0.1",
+    "jest-serializer-enzyme": "^1.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-devtools": "^3.0.0",
-    "react-dom": "^16.1.1",
     "react-native-debugger-open": "^0.3.15",
     "react-test-renderer": "^16.1.1",
     "redux-devtools-extension": "^2.13.2",
@@ -56,7 +59,11 @@
     "remotedev-server": "^0.2.4"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "./testsetup.js",
+    "collectCoverage": true,
+    "verbose":true,
+    "mapCoverage":true
   },
   "globals": {
     "window": true
