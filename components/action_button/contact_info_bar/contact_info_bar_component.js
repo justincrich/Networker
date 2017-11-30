@@ -2,7 +2,7 @@ import React from 'react';
 import {View,StyleSheet,Text, Animated, TouchableOpacity,Linking} from 'react-native';
 import { Icon } from 'react-native-elements';
 import {colors,fonts} from '../../../common_styles';
-import JText from '../../base_components/jtext_component';
+import {JText} from '../../base_components/JLibrary';
 import ContactInfoMoreOptions from './contact_info_more_options_component';
 import * as communications from 'react-native-communications';
 

@@ -25,8 +25,20 @@ class ContactContainer extends React.Component{
  
 
     render(){
-        console.log(this.props)
-        let {data:{selectedContact:contact}} = this.props;
+        //let {data:{selectedContact:contact}} = this.props;
+        
+        const contact =     {
+        id: 1511821971418,
+        firstName: 'Luke',
+        lastName: 'Skywalker',
+        pictureUri: 'file:///storage/emulated/0/Android/data/com.networker/files/Pictures/image-fc525719-52d5-489a-98ac-fbd3118385c6.jpg',
+        email: 'luke@force.net',
+        phoneNumber: '(555) 555-5555',
+        notes: 'Use the force',
+        jobTitle: 'Jedi',
+        company: 'Rebels'
+      }
+        
         return(
             <View style={{
                 position:'relative',
@@ -40,9 +52,9 @@ class ContactContainer extends React.Component{
         )
     }
     getView(contact){
-        const {mode,id} = this.props.navigation.state.params;
-        // let mode = 'view';
-        // let id =  1510816587249;
+        //const {mode,id} = this.props.navigation.state.params;
+        let mode = 'view';
+        let id =  1510816587249;
         
         return(
             <ViewContact 

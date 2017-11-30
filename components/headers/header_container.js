@@ -36,6 +36,7 @@ export default class Header extends React.Component{
                 backgroundColor:'transparent',
                 width:'100%',
                 height:'100%',
+                flex:1,
                 paddingLeft:20,
                 paddingRight:20,
                 
@@ -45,6 +46,7 @@ export default class Header extends React.Component{
                 height:'100%',
                 flex:1,
                 position:'absolute',
+                left:0
 
             }
 
@@ -71,15 +73,15 @@ export default class Header extends React.Component{
     render(){
         return(
             <View style={this.styles.body}>
-                <View style={this.styles.container}>
-                    {this.getViewType(this.props.type)}
-                    <LinearGradient 
+                <LinearGradient 
                     end={{x:0.0,y:.0}}
                     start={{x:0,y:1}}
                     locations={[0,.1,1]}
                     colors={['rgba(255,255,255,.1)','rgba(255,255,255,.5)','rgba(255,255,255,1)']} 
                     style={this.styles.linearGradient}
-                    />
+                />
+                <View style={this.styles.container}>
+                    {this.getViewType(this.props.type)}
                 </View>
             </View>
         )

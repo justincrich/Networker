@@ -4,8 +4,7 @@ import {colors,fonts} from '../../common_styles';
 import { Icon } from 'react-native-elements';
 import { format, parse , isValidNumber} from 'libphonenumber-js';
 import _ from 'lodash';
-import JText from '../base_components/jtext_component';
-import JTextInput from '../base_components/jfield_component';
+import {JText,JTextInput} from '../base_components/JLibrary'
 //components
 import Header from '../headers/header_container'
 import ImageUpload from '../image_upload/image_upload_component'

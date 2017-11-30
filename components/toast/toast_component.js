@@ -1,7 +1,7 @@
 import React from 'react';
 import {View,Animated,ScrollView,StyleSheet,Dimensions} from 'react-native';
 import {colors,fonts} from '../../common_styles';
-import JText from '../base_components/jtext_component';
+import {JText} from '../base_components/JLibrary';
 export default class Toast extends React.Component{
     constructor(props){
         super(props);

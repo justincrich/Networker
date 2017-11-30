@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     Animated
     } from 'react-native';
-import JText from '../../base_components/jtext_component';
+import {JText} from '../../base_components/JLibrary';
 import {colors,fonts} from '../../../common_styles';
 import { Icon } from 'react-native-elements';
 

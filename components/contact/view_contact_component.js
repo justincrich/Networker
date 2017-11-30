@@ -1,15 +1,15 @@
 import React from 'react';
-import {View,ScrollView, StyleSheet,Text,Image} from 'react-native';
-import JBody from '../base_components/body';
-import JText from '../base_components/jtext_component';
+import {View,ScrollView, StyleSheet,Text,Image, TouchableOpacity} from 'react-native';
+import {JDivider, JTextInput,JBody, JText} from '../base_components/JLibrary';
 import {colors,fonts} from '../../common_styles';
-import { Icon } from 'react-native-elements';
+import { Icon, Divider } from 'react-native-elements';
 import _ from 'lodash';
 import Header from '../headers/header_container';
 import defaultImg from '../../media/default_profile_img.png';
 import ContactBar from '../action_button/contact_info_bar/contact_info_bar_component';
 import Toast from '../toast/toast_component';
-
+import InteractionActionBar from './interaction/interaction_actionbar_component';
+import Interaction from './interaction/interaction_component';
 export default class ViewContact extends React.Component{
     constructor(props){
         super(props);
@@ -67,6 +67,15 @@ export default class ViewContact extends React.Component{
                 alignItems:'center',
                 width:'100%'
             },
+            interactionsBody:{
+                display:'flex',
+                flexDirection:'column',
+                width:'100%',
+                marginTop:10
+                
+
+            },
+            
 
         });
         this.showContactToast = this.showContactToast.bind(this);
@@ -86,37 +95,45 @@ export default class ViewContact extends React.Component{
                     deleteContact={this.props.deleteContact}
                 />
                 {this.props.contact &&
-                    <JBody style={{flex:1,width:'100%'}}>
-                        <View style={this.styles.header}>
-                            <View style={this.styles.imgContainer}>
-                                <Image
-                                    source={this.getProfileImg()}
-                                    style={this.styles.image}
-                                />
+                        <JBody style={{flex:1,width:'100%'}}>
+                            <View>
+                                <View style={this.styles.header}>
+                                    <View style={this.styles.imgContainer}>
+                                        <Image
+                                            source={this.getProfileImg()}
+                                            style={this.styles.image}
+                                        />
+                                    </View>
+                                    <View
+                                        style={this.styles.personInfoContainer}
+                                    >
+                                        <JText style={this.styles.firstLastName}>
+                                            {`${this.props.contact.firstName} ${this.props.contact.lastName}`}
+                                        </JText>
+                                        <JText style={this.styles.companyTitle}>
+                                            {this.getCompanyAndTitle()}
+                                        </JText>
+                                    </View>
+                                </View>
+                                <View 
+                                    style={this.styles.contactInfo}
+                                >
+                                    <ContactBar
+                                        contact={this.props.contact}
+                                        showValue={this.showContactToast}
+                                    />
+                                </View>
+                                <InteractionActionBar/>
                             </View>
                             <View
-                                style={this.styles.personInfoContainer}
+                                style={this.styles.interactionsBody}
                             >
-                                <JText style={this.styles.firstLastName}>
-                                    {`${this.props.contact.firstName} ${this.props.contact.lastName}`}
-                                </JText>
-                                <JText style={this.styles.companyTitle}>
-                                    {this.getCompanyAndTitle()}
-                                </JText>
+
+                                <Interaction/>
+                                
                             </View>
-                        </View>
-                        <View 
-                            style={this.styles.contactInfo}
-                        >
                             
-                                <ContactBar
-                                    contact={this.props.contact}
-                                    showValue={this.showContactToast}
-                                />
-                            
-                        </View>
-                        
-                    </JBody>
+                        </JBody>
                 }
                 {
                     this.state.message != '' &&
