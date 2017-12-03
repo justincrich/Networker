@@ -6,6 +6,7 @@ import {Icon} from 'react-native-elements';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ContactsActions from '../../redux/actions/contacts/contacts_actions';
+import * as ToastActions from '../../redux/actions/toast/toast_actions';
 import {colors} from '../../common_styles';
 import {NavigationActions} from 'react-navigation';
 
@@ -40,7 +41,7 @@ class ListContactContainer extends React.Component{
         //     contacts:sortedContacts
         // })
 
-        this.props.Actions.getAllContacts();
+        this.props.ContactsActions.getAllContacts();
         
     }
 
@@ -49,7 +50,8 @@ class ListContactContainer extends React.Component{
     
 
     render(){
-        
+        console.log('PROPS',this.props)
+        let {contacts}=this.props.contacts;
         return(
                 
                 <View style={{position:'relative',top:0, flex:1}}>
@@ -59,7 +61,7 @@ class ListContactContainer extends React.Component{
                                   navigate={this.props.navigation.navigate}
                     />
                     <ActionButton name='md-add' type='ionicon' onPress={this.createContact}/>
-                    <ListContactComponent contacts={this.props.data.contacts} openContact={this.openContact}/> 
+                    <ListContactComponent contacts={contacts} openContact={this.openContact}/> 
                 </View>
             );
     }
@@ -74,7 +76,7 @@ class ListContactContainer extends React.Component{
         this.props.navigation.dispatch(createAction);
     }
     openContact(item){
-        this.props.Actions.getContact(item.id)
+        this.props.ContactsActions.getContact(item.id)
         const viewAction = NavigationActions.navigate({
             routeName:'Contact',
             params:{
@@ -89,14 +91,16 @@ class ListContactContainer extends React.Component{
 const mapStateToProps = state => {
     return(
         {
-            data:state
+            contacts:state.contacts,
+            toast:state.toast
         }
     )
 }
 
 const mapDispatchToProps = dispatch => {
     return{
-      Actions: bindActionCreators(ContactsActions,dispatch),
+        ContactsActions:bindActionCreators(ContactsActions,dispatch),
+        ToastActions:bindActionCreators(ToastActions,dispatch)
     }
   }
 

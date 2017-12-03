@@ -16,3 +16,7 @@ export const interactionsInitialState = {
     interactionRequestStatus:'ready',
     interactionError:null
 }
+
+export const toastInitialState = {
+    message:null
+}

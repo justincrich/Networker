@@ -3,6 +3,7 @@ import {View,Text} from 'react-native';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ContactsActions from '../../redux/actions/contacts/contacts_actions';
+import * as ToastActions from '../../redux/actions/toast/toast_actions';
 import UpsertContact from '../../components/contact/upsert_contact_component';
 import ViewContact from '../../components/contact/view_contact_component';
 import {colors} from '../../common_styles';
@@ -22,7 +23,7 @@ class UpsertContainer extends React.Component{
 
 
     render(){
-        let {data:{selectedContact:contact}} = this.props;
+        let {selectedContact:contact} = this.props.contacts;
         return(
             <View style={{
                 position:'relative',
@@ -40,19 +41,18 @@ class UpsertContainer extends React.Component{
     }
 
     saveContact(contactUpdates){
-        let {data:{selectedContact:contactInView,error,status}} = this.props;
+        let {selectedContact:contactInView,error,status} = this.props.contacts;
         let {mode} = this.props.navigation.state.params;
         if(mode==='edit'){
-            this.props.Actions.requestUpdateContact(contactInView.id,contactUpdates);
+            this.props.ContactsActions.requestUpdateContact(contactInView.id,contactUpdates);
         }else if(mode==='create'){
-            this.props.Actions.requestContactCreate(contactUpdates)
+            this.props.ContactsActions.requestContactCreate(contactUpdates)
         }
-        console.log('cnsideration')
         if(status==='error'){
-            this.props.Actions.resetContactStatus();
+            this.props.ContactsActions.resetContactStatus();
             throw new Error(`Update Contact Error: ${error.message}`);
         }else{
-            this.props.Actions.resetContactStatus();
+            this.props.ContactsActions.resetContactStatus();
             this.props.navigation.goBack();
         }
     }
@@ -64,14 +64,16 @@ const mapStateToProps = state => {
 
     return(
         {
-            data:state
+            contacts:state.contacts,
+            toast:state.toast
         }
     )
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        Actions:bindActionCreators(ContactsActions,dispatch)
+        ContactsActions:bindActionCreators(ContactsActions,dispatch),
+        ToastActions:bindActionCreators(ToastActions,dispatch)
     }
 }
 

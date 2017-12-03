@@ -25,7 +25,7 @@ export const ContactsStack = StackNavigator({
     }
 },
 {
-    initialRouteName:('Contact'),
+    initialRouteName:('ListContacts'),
     headerMode:'none'
 }
 )
