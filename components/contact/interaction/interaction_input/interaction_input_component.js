@@ -158,31 +158,31 @@ export default class InteractionInput extends React.Component{
                 Animated.timing(this.typeAnimated,{
                     toValue:null,
                     duration:250
-                })
-            ]).start(()=>{
-                this.setState({typeOpen:false});
+                }),
                 Animated.timing(this.dateOpacityAnimated,{
                     toValue:1,
                     duration:75
-                }).start();
+                })
+            ]).start(()=>{
+                this.setState({typeOpen:false});
+                
             });
              
         }else{
-            Animated.timing(this.dateOpacityAnimated,{
-                toValue:0,
-                duration:75
-            }).start(()=>{
-                Animated.parallel([
-                    Animated.timing(this.dateWidthAnimated,{
-                        toValue:0,
-                        duration:250
-                    }),
-                    Animated.timing(this.typeAnimated,{
-                        toValue:this.state.optionsContainerWidth,
-                        duration:250
-                    })
-                ]).start(()=>this.setState({typeOpen:true}))
-            })  
+            Animated.parallel([
+                Animated.timing(this.dateOpacityAnimated,{
+                    toValue:0,
+                    duration:75
+                }),
+                Animated.timing(this.dateWidthAnimated,{
+                    toValue:0,
+                    duration:250
+                }),
+                Animated.timing(this.typeAnimated,{
+                    toValue:this.state.optionsContainerWidth,
+                    duration:250
+                })
+            ]).start(()=>this.setState({typeOpen:true}))
         }
     }
 
