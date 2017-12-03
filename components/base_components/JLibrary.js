@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ScrollView, Text,TextInput,StyleSheet} from 'react-native';
+import {View, ScrollView, Text,TextInput,StyleSheet,DatePickerAndroid,DatePickerIOS,Platform} from 'react-native';
 import {colors, fonts} from '../../common_styles';
 export class JDivider extends React.Component{
     constructor(props){

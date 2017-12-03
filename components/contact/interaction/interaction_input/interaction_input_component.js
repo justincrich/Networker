@@ -3,16 +3,20 @@ import {View,TouchableOpacity,Animated,StyleSheet, ScrollView} from 'react-nativ
 import {Icon} from 'react-native-elements';
 import {JTextInput,JText,JDivider} from '../../../base_components/JLibrary';
 import {colors,fonts} from '../../../../common_styles';
-
+import InteractionTypeButton from './interaction_type_button';
+import InteractionDate from './interaction_date_button';
 export default class InteractionInput extends React.Component{
     constructor(props){
         super(props);
+        this.typeAnimated = new Animated.Value();
+        this.dateOpacityAnimated = new Animated.Value(1);
+        this.dateWidthAnimated = new Animated.Value(50);
         this.state = {
             input_body_opacity_animated_value:new Animated.Value(1),
-            typeSet:false,
-            typesOpen:false,
-            dateSet:false,
-            dateOpen:false
+            optionsContainerWidth:0,
+            typeOpen:false,
+            dateValue:null,
+            typeValue:null
         }
         this.styles= StyleSheet.create({
             inputInteractionBody:{
@@ -42,30 +46,30 @@ export default class InteractionInput extends React.Component{
                 justifyContent:'flex-end',
                 
             },
-            optionsButton:{
-                height:40,
-                borderRadius:20,
-                backgroundColor:colors.accent,
-                display:'flex',
-                flexDirection:'row',
-                alignItems:'center',
-                
-                justifyContent:'center',
-                alignItems:'center'
-            },
-            optionsButtonText:{
-                marginRight:5
-            },
             saveContainer:{
                 display:'flex',
-                flexDirection:'column'
+                flexDirection:'column',
+                height:'100%',
+                justifyContent:'space-around'
+
             },
             submitActionIcon:{
                 padding:10
+            },
+            interactionTypeContainer:{
+                height:40
+            },
+            button:{
+                width:40,
+                height:40
             }
         })
-        this.getTypeOptions = this.getTypeOptions.bind(this);
-        this.getDateOptions = this.getDateOptions.bind(this);
+
+        this.toggleInteractionTypeOpen = this.toggleInteractionTypeOpen.bind(this);
+        this.setTypeValue = this.setTypeValue.bind(this);
+    }
+
+    componentWillMount(){
 
     }
 
@@ -76,21 +80,46 @@ export default class InteractionInput extends React.Component{
                     <View style={this.styles.addInteractionTextInputContainer}>
                         <JText
                             style={this.styles.addInteractionTextInputLabel}
-                        >Interaction Details</JText>
+                        >
+                            New Interaction
+                        </JText>
                         <JTextInput
                             style={this.styles.addInteractionTextInputInput}
                             multiline={true}
+                            placeholder='Details ...'
                         />
                     </View>
-                    <View style={this.styles.optionsContainer}>
-                        {
-                            
-                            this.getTypeOptions()
-                        }
-                        {
-                            !this.state.typeOpen &&
-                            this.getDateOptions()
-                        }
+                    <View style={this.styles.optionsContainer}
+                          onLayout={(event) => {
+                            var {x, y, width, height} = event.nativeEvent.layout;
+                            this.setState({optionsContainerWidth:width})
+                          }}
+                    >
+                            <Animated.View
+                                style={[this.styles.interactionTypeContainer,{width:this.typeAnimated}]}
+                            >
+                                <InteractionTypeButton 
+                                    style={this.styles.button}
+                                    typeOpen={this.state.typeOpen}
+                                    typeValue={this.state.typeValue}
+                                    setTypeValue={(type)=>this.setTypeValue(type)}
+                                    toggleOpen={this.toggleInteractionTypeOpen}
+                                    containerWidth={this.state.optionsContainerWidth}
+                                />
+                            </Animated.View>
+                            <Animated.View
+                                style={{opacity:this.dateOpacityAnimated,width:this.dateWidthAnimated}}
+                            >
+                            {
+                                !this.state.typeOpen &&
+                                
+                                    <InteractionDate 
+                                        dateValue={this.state.dateValue} 
+                                        setDate={(date)=>this.setState({dateValue:date})}
+                                        style={this.styles.button}
+                                    />
+                            }
+                            </Animated.View>
                     </View>
                 </View>
                 <View style={this.styles.saveContainer}>
@@ -100,6 +129,7 @@ export default class InteractionInput extends React.Component{
                         <Icon
                             name={'check'}
                             iconStyle={this.styles.submitActionIcon}
+                            size={30}
                             color={colors.accent}
                         />
                     </TouchableOpacity>
@@ -109,6 +139,7 @@ export default class InteractionInput extends React.Component{
                         <Icon
                             name={'close'}
                             type={'material-community'}
+                            size={30}
                             iconStyle={this.styles.submitActionIcon}
                         />
                     </TouchableOpacity>
@@ -117,147 +148,50 @@ export default class InteractionInput extends React.Component{
         )
     }
 
-    getTypeOptions(){
-        let containerDynamicStyle = {};
-        let iconColor;
-        let iconDynamicStyle;
-        let isDisabled;
-        let iconName;
-        let typeText={
-            marginRight:20,
-            color:colors.textColorDarkBkg,
-            fontSize:fonts.sizes.lil
-        };
+    toggleInteractionTypeOpen(){
         if(this.state.typeOpen){
-            containerDynamicStyle ={
-                width:'100%',
-                justifyContent:'flex-end',
-                paddingLeft:20,
-                paddingRight:20
-            }
-            iconDynamicStyle = {marginLeft:'auto'}
-
-            isDisabled = true;
-
-            iconName = 'close';
-            
+            Animated.parallel([
+                Animated.timing(this.dateWidthAnimated,{
+                    toValue:40,
+                    duration:250
+                }),
+                Animated.timing(this.typeAnimated,{
+                    toValue:null,
+                    duration:250
+                })
+            ]).start(()=>{
+                this.setState({typeOpen:false});
+                Animated.timing(this.dateOpacityAnimated,{
+                    toValue:1,
+                    duration:75
+                }).start();
+            });
+             
         }else{
-            containerDynamicStyle = {
-                marginRight:10,
-                width:40
-            }
-            isDisabled = false;
-            iconName = 'forum';
+            Animated.timing(this.dateOpacityAnimated,{
+                toValue:0,
+                duration:75
+            }).start(()=>{
+                Animated.parallel([
+                    Animated.timing(this.dateWidthAnimated,{
+                        toValue:0,
+                        duration:250
+                    }),
+                    Animated.timing(this.typeAnimated,{
+                        toValue:this.state.optionsContainerWidth,
+                        duration:250
+                    })
+                ]).start(()=>this.setState({typeOpen:true}))
+            })  
         }
-
-        if(this.state.typeSet){
-            iconColor = colors.accent;
-        }else{
-            iconColor = '#fff';
-        }
-
-        return(
-            <TouchableOpacity
-                style={[this.styles.optionsButton,containerDynamicStyle]}
-                disabled={isDisabled}
-                onPress={()=>this.setState({typeOpen:true})}
-            >
-                {
-                    this.state.typeOpen &&
-                    <ScrollView
-                        style={{
-                            marginRight:'auto',
-                            display:'flex',
-                            flexDirection:'row',
-                            
-                        }}
-                        horizontal={true}
-                    >
-                        <TouchableOpacity>
-                            <JText
-                                style={typeText}
-                            >
-                                Email
-                            </JText>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <JText
-                                style={typeText}
-                            >
-                                Phone Call
-                            </JText>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <JText
-                                    style={typeText}
-                                >
-                                    Text Message
-                            </JText>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <JText
-                                    style={typeText}
-                                >
-                                    In Person
-                            </JText>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <JText
-                                    style={typeText}
-                                >
-                                    Social Media
-                            </JText>
-                        </TouchableOpacity>
-                    </ScrollView>
-                }
-                <TouchableOpacity
-                    onPress={()=>this.setState({typeOpen:false})}
-                    disabled={!isDisabled}
-                >
-                    <Icon
-                        name={iconName}
-                        color={iconColor}
-                    />
-                </TouchableOpacity>
-            </TouchableOpacity>
-        )
     }
 
-    getDateOptions(){
-        let dynamicStyling = {};
-        let iconColor;
-        if(this.state.dateSet){
-            dynamicStyling ={
-                backgroundColor:'transparent',
-                borderWidth:2,
-                borderColor:colors.accent,
-                paddingLeft:10,
-                paddingRight:10
-            }
-            iconColor = colors.accent
-        }else{
-            dynamicStyling = {
-                width:40,
- 
-            }
-            iconColor = '#fff';
-        }
-        return(
-            <TouchableOpacity style={[this.styles.optionsButton,
-                {...dynamicStyling}]}>
-                    { this.state.dateSet &&
-                        <JText
-                            style={{color:colors.accent, marginRight:10}}
-                        >3 Months Ago
-                        </JText>
-                    }
-                    <Icon
-                        name={'schedule'}
-                        color={iconColor}
-                    />
-            </TouchableOpacity>
-        )
+    setTypeValue(type){
+        console.log(type)
+        this.setState({typeValue:type});
+        this.toggleInteractionTypeOpen();
     }
+
 
 
 }

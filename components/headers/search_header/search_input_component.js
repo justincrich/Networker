@@ -68,6 +68,7 @@ export default class SearchInput extends React.Component{
     }
 
     componentWillMount(){
+        
         this.search_icon_animation_value = new Animated.Value(0);
         this.search_field_width_animation = new Animated.Value(0);
         this.search_field_opacity_animation = new Animated.Value(0);
