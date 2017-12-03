@@ -108,7 +108,8 @@ export default class InteractionTypeButton extends React.Component{
             <View
                 style={[
                     this.styles.optionsButton,
-                    this.state.dynamicStyle.container
+                    this.state.dynamicStyle.container,
+                    {padding:this.state.selectedType? 5:0}
                 ]}
             >
                     <ScrollView
@@ -180,7 +181,7 @@ export default class InteractionTypeButton extends React.Component{
 
     setType(type){
         console.log('type',type)
-        this.props.setTypeValue(type)
+        this.props.setTypeValue(type.name)
         this.setState({selectedType:type})
     }
     

@@ -10,7 +10,7 @@ export default class InteractionInput extends React.Component{
         super(props);
         this.typeAnimated = new Animated.Value();
         this.dateOpacityAnimated = new Animated.Value(1);
-        this.dateWidthAnimated = new Animated.Value(50);
+        this.dateWidthAnimated = new Animated.Value();
         this.state = {
             input_body_opacity_animated_value:new Animated.Value(1),
             optionsContainerWidth:0,
@@ -152,7 +152,7 @@ export default class InteractionInput extends React.Component{
         if(this.state.typeOpen){
             Animated.parallel([
                 Animated.timing(this.dateWidthAnimated,{
-                    toValue:40,
+                    toValue:null,
                     duration:250
                 }),
                 Animated.timing(this.typeAnimated,{

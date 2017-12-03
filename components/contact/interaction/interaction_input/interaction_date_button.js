@@ -22,7 +22,7 @@ export default class InteractionDate extends React.Component{
                 display:'flex',
                 flexDirection:'row',
                 alignItems:'center',
-                
+                backgroundColor:colors.accent,
                 justifyContent:'center',
                 alignItems:'center'
             },
@@ -49,13 +49,13 @@ export default class InteractionDate extends React.Component{
             >
                     { this.props.dateValue &&
                         <JText
-                            style={{color:colors.accent, marginRight:10}}
+                            style={{color:colors.textColorDarkBkg, marginRight:10}}
                         >{`${moment(this.props.dateValue).format("M/D/YYYY")}`}
                         </JText>
                     }
                     <Icon
                         name={'today'}
-                        color={this.state.iconColor}
+                        color={colors.textColorDarkBkg}
                     />
                     <DateTimePicker
                         date={!this.props.dateValue? new Date():this.props.dateValue}
@@ -72,22 +72,15 @@ export default class InteractionDate extends React.Component{
         if(newDateValue){
             this.setState({
                 dynamicStyling:{
-                    backgroundColor:'transparent',
-                    borderWidth:2,
-                    borderColor:colors.accent,
                     paddingLeft:10,
                     paddingRight:10,
-                    
                 },
-                iconColor:colors.accent
             });
         }else{
             this.setState({
                 dynamicStyling:{
                     width:40,
-                    backgroundColor:colors.accent
                 },
-                iconColor:'#fff'
             });
         }
     }
